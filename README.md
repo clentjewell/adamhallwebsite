@@ -71,10 +71,11 @@ All copy is centralised under `src/data/`:
 
 ## Fonts
 
-The original uses Adobe Fonts (Typekit kit `dej5ozb`: **neue-haas-grotesk-display**,
-**mr-eaves-modern**) plus Google Roboto. The kit is referenced in `index.html`; if the site moves
-to a new domain, add that domain to the Adobe Fonts kit's allowed domains. Faithful fallback
-stacks are defined in `src/styles/tokens.css`.
+The site loads Adobe Fonts web project `knr6tgk` (**neue-haas-grotesk-display**,
+**mr-eaves-modern** — the same families as the original site's kit) plus Google Roboto, referenced
+in `index.html`. Current Adobe Fonts web projects work on any domain, so no domain configuration
+is needed. Both families must be added to that one web project on fonts.adobe.com. Faithful
+fallback stacks are defined in `src/styles/tokens.css`.
 
 ## Assets
 
