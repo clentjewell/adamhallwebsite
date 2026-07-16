@@ -33,8 +33,18 @@ npm run preview    # serve the production build locally
 | `/privacy-policy` | Privacy Policy |
 | anything else | 404 |
 
-`public/_redirects` (Netlify/Cloudflare Pages) and `vercel.json` provide the SPA fallback so deep
-links resolve. For nginx/Apache, rewrite all paths to `/index.html`.
+SPA fallback for deep links: Cloudflare Workers uses `wrangler.jsonc`
+(`not_found_handling: single-page-application`), Vercel uses `vercel.json`. For nginx/Apache,
+rewrite all paths to `/index.html`.
+
+## Deployment (Cloudflare Workers)
+
+```bash
+npm run build
+npx wrangler deploy   # requires CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID
+```
+
+Deployed at: https://adamhall-buymycar.clent.workers.dev
 
 ## Configuration
 
