@@ -17,7 +17,7 @@ body {
   font-family: var(--font-body);
   font-weight: var(--fw-body);
   font-size: var(--fs-body);
-  line-height: 1.6;
+  line-height: 1.4; /* live site: 24px text at 33.6px line height */
   color: var(--c-text);
   background: var(--c-cream);
   -webkit-font-smoothing: antialiased;
@@ -128,15 +128,15 @@ button {
   color: var(--c-white);
 }
 
-/* Small uppercase eyebrow label (mr-eaves accent) */
+/* Small uppercase eyebrow label — live: 14px NHG 600, 1px tracking, purple */
 .eyebrow {
-  font-family: var(--font-accent);
-  font-weight: var(--fw-accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
   font-size: var(--fs-label);
-  letter-spacing: 0.18em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--c-purple);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   display: inline-block;
 }
 .eyebrow--muted {

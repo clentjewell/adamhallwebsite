@@ -19,26 +19,26 @@ export default function Header() {
     <header className="site-header">
       <div className="site-header__inner container container--wide">
         <Link to="/" className="site-header__logo" aria-label="Adam Hall Buy My Car — home">
-          <img src="/assets/logos/logo-black.svg" alt="Adam Hall Buy My Car" width={150} height={62} />
+          <img src="/assets/logos/logo-black.svg" alt="Adam Hall Buy My Car" width={200} height={90} />
         </Link>
 
-        <nav className="site-header__nav" aria-label="Primary">
-          <ul>
-            {nav.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  className={({ isActive }) => (isActive ? 'is-active' : undefined)}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="site-header__cta">
-          <Button href={site.phoneHref} variant="purple">
+        {/* Right side: nav row with the phone pill below it (matches the live site) */}
+        <div className="site-header__right">
+          <nav className="site-header__nav" aria-label="Primary">
+            <ul>
+              {nav.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Button href={site.phoneHref} variant="purple" className="btn--bubble site-header__phone">
             {site.phoneDisplay}
           </Button>
         </div>

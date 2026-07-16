@@ -11,9 +11,9 @@
   margin-bottom: 1rem;
 }
 .hiw-lead__text {
-  font-size: 1.15rem;
+  font-size: var(--fs-body);
   color: var(--c-text);
-  max-width: 38rem;
+  max-width: 42rem;
   margin-inline: auto;
 }
 
@@ -51,10 +51,11 @@
   text-align: center;
 }
 .hiw-band__title {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  color: var(--c-dark);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  color: var(--c-black);
   margin-bottom: 1.8rem;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 .hiw-band__pill {
   display: inline-block;
@@ -86,8 +87,9 @@
   margin-bottom: 1.2rem;
 }
 .hiw-exhaust__content > p {
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   margin-bottom: 1.4rem;
+  color: var(--c-text-dark);
 }
 .hiw-exhaust__actions {
   margin-top: 1.8rem;
@@ -110,7 +112,7 @@
 }
 .hiw-promise__card p {
   color: var(--c-text);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
 }
 
 .hiw-quote {

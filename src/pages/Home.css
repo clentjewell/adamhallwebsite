@@ -2,12 +2,10 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 39%) 1fr;
-  min-height: 720px;
+  min-height: 900px; /* live hero: photo column ~900px tall at 1440 */
 }
 .hero__media {
   position: relative;
-  /* pull up behind the header so the photo touches the top of the page */
-  margin-top: calc(-1 * var(--header-h));
 }
 .hero__media > img:not(.hero__signature) {
   width: 100%;
@@ -16,9 +14,9 @@
 }
 .hero__signature {
   position: absolute;
-  left: 1.75rem;
+  left: 70px;
   bottom: 1.75rem;
-  width: 150px;
+  width: 130px; /* live: 130x61 */
   height: auto;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
@@ -26,8 +24,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 6vw, 6.5rem);
-  max-width: 44rem;
+  /* top padding clears the absolutely-positioned header */
+  padding: calc(var(--header-h) + 2rem) clamp(1.5rem, 6vw, 6.5rem) clamp(2.5rem, 5vw, 4.5rem);
+  max-width: 50rem;
 }
 .hero__title {
   font-size: var(--fs-hero);
@@ -36,10 +35,12 @@
   margin-bottom: 0.9rem;
 }
 .hero__subtitle {
-  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.92);
+  /* live: 28px mr-eaves-modern */
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.3;
+  color: var(--c-white);
   margin-bottom: 1.6rem;
-  max-width: 28rem;
+  max-width: 42rem;
 }
 .hero__actions {
   display: flex;
@@ -58,15 +59,16 @@
   text-align: center;
 }
 .home-intro__title {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  line-height: 1.2;
-  color: var(--c-dark);
+  /* live: 40px w600, black */
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1.3;
+  color: var(--c-black);
   margin-bottom: 1.2rem;
 }
 .home-intro__text {
-  font-size: 1.25rem;
+  font-size: var(--fs-body);
   color: var(--c-text);
-  max-width: 40rem;
+  max-width: 44rem;
   margin-inline: auto;
 }
 
@@ -83,9 +85,10 @@
   color: var(--c-dark);
 }
 .home-split__content > p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: 1.4;
   margin-bottom: 1.2rem;
+  color: var(--c-text-dark);
 }
 .home-split__media {
   position: relative;

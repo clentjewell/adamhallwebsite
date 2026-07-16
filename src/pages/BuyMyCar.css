@@ -12,8 +12,8 @@
   gap: 1rem;
 }
 .bmc__logo img {
-  height: 78px;
-  width: auto;
+  width: 200px;
+  height: auto;
 }
 .bmc__featured {
   display: flex;
@@ -48,10 +48,10 @@
   margin-bottom: 1.2rem;
 }
 .bmc__lead {
-  font-size: 1.25rem;
+  font-size: var(--fs-body);
   color: var(--c-text-dark);
   margin-bottom: 1.8rem;
-  max-width: 30rem;
+  max-width: 32rem;
 }
 .bmc__rule {
   border: 0;

@@ -144,7 +144,7 @@ export default function Home() {
             </p>
             <IconList items={['We come to you', 'Same day payment', 'Complimentary car pickup']} />
             <div className="home-actions">
-              <Button to="/how-it-works" variant="outline-green" arrow>
+              <Button to="/how-it-works" variant="purple" arrow>
                 How does it work?
               </Button>
             </div>

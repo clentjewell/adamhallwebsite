@@ -3,8 +3,8 @@
   margin-bottom: 1.5rem;
 }
 .about-bio p {
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: var(--fs-body);
+  line-height: 1.4;
   color: var(--c-text-dark);
 }
 .about-bio__list {
@@ -15,7 +15,7 @@
   flex-direction: column;
   gap: 0.4rem;
   color: var(--c-text-dark);
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
 }
 .about-bio__from {
   font-weight: 600;
@@ -56,7 +56,7 @@
 }
 .about-card p {
   color: var(--c-text);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
 }
 
 .about-numbers__title {
@@ -97,8 +97,8 @@
 .about-values__list dd {
   margin: 0;
   color: var(--c-text);
-  font-size: 1.05rem;
-  line-height: 1.55;
+  font-size: var(--fs-body);
+  line-height: 1.4;
 }
 
 @media (max-width: 900px) {

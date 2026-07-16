@@ -1,8 +1,10 @@
 .faq__title {
   text-align: center;
   font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: 0.1px;
   margin-bottom: 2.5rem;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 .faq__list {
   display: flex;
@@ -11,7 +13,7 @@
 }
 .faq__item {
   background: var(--c-white);
-  border-radius: var(--radius);
+  border-radius: 5px;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: box-shadow var(--transition);
@@ -31,11 +33,13 @@
   text-align: left;
   background: transparent;
   border: 0;
-  padding: 1.3rem 1.6rem;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--c-dark);
+  /* live: 24px mr-eaves-modern 700, 25px padding */
+  padding: 25px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  line-height: 1;
+  color: var(--c-black);
 }
 .faq__chevron {
   flex-shrink: 0;
@@ -46,20 +50,19 @@
   transform: rotate(180deg);
 }
 .faq__panel {
-  padding: 0 1.6rem 1.5rem;
+  padding: 0 25px 25px;
 }
 .faq__panel p {
   color: var(--c-text);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: var(--fs-body);
+  line-height: 1.4;
 }
 
 @media (max-width: 767px) {
   .faq__q button {
-    padding: 1.1rem 1.2rem;
-    font-size: 0.98rem;
+    padding: 18px;
   }
   .faq__panel {
-    padding: 0 1.2rem 1.3rem;
+    padding: 0 18px 18px;
   }
 }

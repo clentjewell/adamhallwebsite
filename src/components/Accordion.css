@@ -19,10 +19,10 @@
   background: transparent;
   border: 0;
   padding: 1.15rem 0.25rem;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.15rem;
-  color: var(--c-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  color: var(--c-black);
 }
 .accordion__chevron {
   flex-shrink: 0;
@@ -37,7 +37,7 @@
 }
 .accordion__panel p {
   color: var(--c-text);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: 1.4;
   margin: 0;
 }

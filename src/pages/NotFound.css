@@ -1,7 +1,13 @@
 .nf {
   min-height: 60vh;
-  display: flex;
-  align-items: center;
+}
+.nf__band {
+  height: calc(var(--header-h-mobile) + 40px);
+}
+@media (min-width: 1025px) {
+  .nf__band {
+    height: calc(var(--header-h) + 40px);
+  }
 }
 .nf__inner {
   text-align: center;

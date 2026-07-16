@@ -5,10 +5,16 @@
 /* --- centred variant --- */
 .ghero--centered .ghero__inner {
   text-align: center;
-  padding-block: clamp(2.5rem, 5vw, 4rem);
+  /* top padding clears the absolutely-positioned header */
+  padding-block: calc(var(--header-h-mobile) + 1.5rem) clamp(2.5rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (min-width: 1025px) {
+  .ghero--centered .ghero__inner {
+    padding-top: calc(var(--header-h) + 1.5rem);
+  }
 }
 .ghero--centered .ghero__subtitle {
   margin-inline: auto;
@@ -16,8 +22,13 @@
 
 /* --- text variant (left aligned) --- */
 .ghero--text .ghero__inner {
-  padding-block: clamp(3rem, 7vw, 6rem);
+  padding-block: calc(var(--header-h-mobile) + 1.5rem) clamp(3rem, 7vw, 6rem);
   max-width: var(--container-wide);
+}
+@media (min-width: 1025px) {
+  .ghero--text .ghero__inner {
+    padding-top: calc(var(--header-h) + 1.5rem);
+  }
 }
 .ghero--text .ghero__title,
 .ghero--text .ghero__subtitle {
@@ -34,10 +45,11 @@
   color: var(--c-white);
 }
 .ghero__subtitle {
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.5;
-  max-width: 36rem;
+  /* live: 28px mr-eaves */
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  color: var(--c-white);
+  line-height: 1.3;
+  max-width: 42rem;
   margin-bottom: 0;
 }
 .ghero__actions {
@@ -50,7 +62,7 @@
   justify-content: center;
 }
 .eyebrow--hero {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--c-purple); /* live: eyebrows stay purple on green */
 }
 
 /* --- bridge photo: hangs half out of the green band into the section below --- */

@@ -11,7 +11,7 @@
 /* Home grid */
 .tgrid__title {
   text-align: center;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2); /* live: 56px */
   margin-bottom: 3rem;
 }
 .tgrid__list {
@@ -35,8 +35,8 @@
 }
 .tgrid__item p {
   color: var(--c-white);
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: var(--fs-body);
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -50,8 +50,8 @@
 .tlist__item p {
   margin: 0.3rem 0 0;
   color: var(--c-text-dark);
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-size: var(--fs-body);
+  line-height: 1.4;
 }
 .tlist__meta {
   display: flex;

@@ -11,8 +11,9 @@ export default function NotFound() {
   });
 
   return (
-    <section className="section bg-cream nf">
-      <div className="container container--narrow nf__inner">
+    <section className="nf">
+      <div className="nf__band bg-green" aria-hidden="true" />
+      <div className="container container--narrow nf__inner section">
         <p className="nf__code">404</p>
         <h1>We couldn&rsquo;t find that page</h1>
         <p className="nf__text">

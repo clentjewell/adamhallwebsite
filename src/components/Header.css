@@ -1,46 +1,57 @@
-/* Non-sticky, matching the reference site: the header scrolls with the page
-   and sits on the green hero band. */
+/* Transparent header overlaying the page's green hero (non-sticky, as on the
+   live site): the Home hero photo reaches the very top of the page and the
+   black bubble logo sits on top of it. */
 .site-header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: var(--c-green);
+  background: transparent;
 }
 
 .site-header__inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 1.5rem;
-  height: var(--header-h);
+  padding-top: 30px;
+  min-height: var(--header-h);
 }
 
 .site-header__logo {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .site-header__logo img {
-  height: 56px;
-  width: auto;
+  width: 200px;
+  height: auto;
 }
 
-.site-header__nav {
-  margin-left: auto;
+/* Right column: nav row on top, phone pill below (right-aligned) */
+.site-header__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 14px;
 }
 .site-header__nav ul {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
   list-style: none;
 }
 .site-header__nav a {
-  font-family: var(--font-accent);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.125rem; /* 18px, as on the live site */
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--c-white);
   position: relative;
-  padding-block: 0.4rem;
+  padding-block: 0.3rem;
 }
 .site-header__nav a::after {
   content: '';
@@ -60,10 +71,6 @@
 }
 .site-header__nav a:hover {
   color: var(--c-purple);
-}
-
-.site-header__cta {
-  flex-shrink: 0;
 }
 
 /* Burger */
@@ -108,6 +115,7 @@
   transform: translateX(100%);
   transition: transform 0.35s ease;
   overflow-y: auto;
+  z-index: 99;
 }
 .mobile-menu.is-open {
   transform: translateX(0);
@@ -120,10 +128,10 @@
 }
 .mobile-menu a {
   display: block;
-  font-family: var(--font-accent);
-  font-weight: 500;
-  font-size: 1.35rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--c-white);
   padding: 0.85rem 0;
@@ -137,16 +145,16 @@
 }
 
 @media (max-width: 1024px) {
-  .site-header__nav,
-  .site-header__cta {
+  .site-header__right {
     display: none;
   }
   .site-header__inner {
-    height: var(--header-h-mobile);
-    justify-content: space-between;
+    min-height: var(--header-h-mobile);
+    align-items: center;
+    padding-top: 12px;
   }
   .site-header__logo img {
-    height: 46px;
+    width: 140px;
   }
   .burger {
     display: flex;
