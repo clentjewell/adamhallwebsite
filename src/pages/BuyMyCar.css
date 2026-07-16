@@ -25,7 +25,7 @@
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.7rem;
-  color: var(--c-text);
+  color: var(--c-black);
 }
 .bmc__featured img {
   height: 42px;
@@ -44,12 +44,12 @@
 }
 .bmc__title {
   font-size: clamp(2.4rem, 5vw, 3.5rem);
-  color: var(--c-dark);
+  color: var(--c-black);
   margin-bottom: 1.2rem;
 }
 .bmc__lead {
   font-size: var(--fs-body);
-  color: var(--c-text-dark);
+  color: var(--c-black);
   margin-bottom: 1.8rem;
   max-width: 32rem;
 }
@@ -61,7 +61,7 @@
 }
 .bmc__phone {
   margin-top: 1.6rem;
-  color: var(--c-text);
+  color: var(--c-black);
 }
 .bmc__phone a {
   color: var(--c-green);
@@ -81,7 +81,7 @@
   justify-content: center;
   padding-block: 2rem;
   font-size: 0.85rem;
-  color: var(--c-text);
+  color: var(--c-black);
 }
 .bmc__foot a:hover {
   color: var(--c-green);

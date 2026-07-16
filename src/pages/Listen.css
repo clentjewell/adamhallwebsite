@@ -22,7 +22,7 @@
 .listen__count {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: var(--c-text);
+  color: var(--c-black);
 }
 
 @media (max-width: 900px) {

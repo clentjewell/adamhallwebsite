@@ -37,7 +37,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: var(--fw-heading);
-  color: var(--c-dark);
+  color: var(--c-black);
   line-height: 1.15;
   margin: 0 0 0.5em;
 }

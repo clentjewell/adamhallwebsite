@@ -56,7 +56,7 @@
 }
 .tlist__item p {
   margin: 0.3rem 0 0;
-  color: var(--c-text-dark);
+  color: var(--c-black);
   font-size: var(--fs-body);
   line-height: 1.4;
 }

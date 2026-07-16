@@ -53,7 +53,7 @@
   padding: 0 25px 25px;
 }
 .faq__panel p {
-  color: var(--c-text);
+  color: var(--c-black);
   font-size: var(--fs-body);
   line-height: 1.4;
 }

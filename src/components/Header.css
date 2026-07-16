@@ -32,13 +32,13 @@
   height: auto;
 }
 
-/* Right column: nav row on top, phone pill below (right-aligned) */
+/* Right side: nav items and phone pill on one row */
 .site-header__right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  padding-top: 14px;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 22px;
 }
 .site-header__nav ul {
   display: flex;

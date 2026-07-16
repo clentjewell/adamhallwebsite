@@ -33,7 +33,7 @@
   font-weight: 400;
   font-family: var(--font-body);
   margin: 0;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 .ap__play {
   flex-shrink: 0;
@@ -66,7 +66,7 @@
 }
 .ap__time {
   font-size: 0.8rem;
-  color: var(--c-text);
+  color: var(--c-black);
   font-variant-numeric: tabular-nums;
   min-width: 40px;
   text-align: right;
@@ -139,10 +139,10 @@
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.35rem;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 .ap__transcript-chev {
-  color: var(--c-dark);
+  color: var(--c-black);
   transition: transform var(--transition);
 }
 .ap__transcript.is-open .ap__transcript-chev {
@@ -156,7 +156,7 @@
 .ap__transcript-body p {
   font-size: 0.98rem;
   line-height: 1.7;
-  color: var(--c-text-dark);
+  color: var(--c-black);
   white-space: pre-line;
 }
 

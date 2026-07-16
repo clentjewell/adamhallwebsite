@@ -15,7 +15,7 @@
   font-size: 1.5rem;
   margin-top: 2.2rem;
   margin-bottom: 0.8rem;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 .privacy-body h2:first-child {
   margin-top: 0;
@@ -23,6 +23,6 @@
 .privacy-body p {
   font-size: 1.25rem;
   line-height: 1.5;
-  color: var(--c-text-dark);
+  color: var(--c-black);
   margin-bottom: 1.1rem;
 }

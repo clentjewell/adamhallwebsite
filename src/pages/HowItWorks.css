@@ -12,7 +12,7 @@
 }
 .hiw-lead__text {
   font-size: var(--fs-body);
-  color: var(--c-text);
+  color: var(--c-black);
   max-width: 42rem;
   margin-inline: auto;
 }
@@ -62,7 +62,7 @@
   border: 2px solid var(--c-purple-dark);
   border-radius: var(--radius-pill);
   padding: 0.05em 0.55em;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 .hiw-band__line {
   display: block;
@@ -89,7 +89,7 @@
 .hiw-exhaust__content > p {
   font-size: var(--fs-body);
   margin-bottom: 1.4rem;
-  color: var(--c-text-dark);
+  color: var(--c-black);
 }
 .hiw-exhaust__actions {
   margin-top: 1.8rem;
@@ -111,7 +111,7 @@
   margin-bottom: 0.5rem;
 }
 .hiw-promise__card p {
-  color: var(--c-text);
+  color: var(--c-black);
   font-size: var(--fs-body);
 }
 

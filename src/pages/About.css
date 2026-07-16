@@ -5,7 +5,7 @@
 .about-bio p {
   font-size: var(--fs-body);
   line-height: 1.4;
-  color: var(--c-text-dark);
+  color: var(--c-black);
 }
 .about-bio__list {
   list-style: disc;
@@ -14,12 +14,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  color: var(--c-text-dark);
+  color: var(--c-black);
   font-size: var(--fs-body);
 }
 .about-bio__from {
   font-weight: 600;
-  color: var(--c-dark);
+  color: var(--c-black);
   margin-bottom: 0.4rem;
 }
 .about-bio__quote {
@@ -29,7 +29,7 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-style: italic;
-  color: var(--c-dark);
+  color: var(--c-black);
 }
 
 .about-simplify__title {
@@ -55,7 +55,7 @@
   margin: 0.6rem 0 0.7rem;
 }
 .about-card p {
-  color: var(--c-text);
+  color: var(--c-black);
   font-size: var(--fs-body);
 }
 
@@ -91,12 +91,12 @@
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--c-dark);
+  color: var(--c-black);
   margin-bottom: 0.25rem;
 }
 .about-values__list dd {
   margin: 0;
-  color: var(--c-text);
+  color: var(--c-black);
   font-size: var(--fs-body);
   line-height: 1.4;
 }

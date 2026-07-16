@@ -27,7 +27,7 @@
 .nf__text {
   max-width: 30rem;
   margin: 0 auto 2rem;
-  color: var(--c-text);
+  color: var(--c-black);
   font-size: 1.1rem;
 }
 .nf__actions {
