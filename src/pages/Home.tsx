@@ -78,7 +78,7 @@ export default function Home() {
       {/* Value my car — image right with welcome/hello bubbles */}
       <section className="section bg-cream" style={{ paddingTop: 0 }}>
         <div className="container container--wide home-split">
-          <div className="home-split__content reveal">
+          <div className="home-split__content reveal-left">
             <span className="eyebrow">Value my car</span>
             <h3 className="home-split__title">
               <span className="wavy">What&rsquo;s</span> Your Car Worth?
@@ -99,7 +99,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="home-split__media reveal">
+          <div className="home-split__media reveal-right">
             <img
               src="/assets/images/Adam-Hall-Buy-My-Car-1-Long.jpg"
               alt="Adam Hall shaking hands with a customer at their home"
@@ -120,7 +120,7 @@ export default function Home() {
       {/* Buy my car — image left, rotating hassle-free badge */}
       <section className="section bg-cream home-buy" style={{ paddingTop: 0 }}>
         <div className="container container--wide home-split home-split--media-left">
-          <div className="home-split__media home-split__media--collage reveal">
+          <div className="home-split__media home-split__media--collage reveal-left">
             <img
               src="/assets/images/Adam-Hall-Value-My-Car.jpg"
               alt="Adam Hall talking with a customer through their car window"
@@ -145,7 +145,7 @@ export default function Home() {
               height={110}
             />
           </div>
-          <div className="home-split__content reveal">
+          <div className="home-split__content reveal-right">
             <span className="eyebrow">Buy my car</span>
             <h3 className="home-split__title">
               The <span className="wavy">easiest</span> and quickest way to sell your car,
@@ -170,7 +170,7 @@ export default function Home() {
       {/* Featured testimonial: polaroid-framed photo + quote */}
       <section className="bg-green home-feature">
         <div className="container container--wide home-feature__inner">
-          <div className="home-feature__media reveal">
+          <div className="home-feature__media reveal-zoom">
             <div className="polaroid">
               <img
                 src="/assets/images/Adam-Hall-Buy-My-Car-3-Tall.jpg"
@@ -182,7 +182,7 @@ export default function Home() {
             </div>
             <img className="home-feature__arrow" src="/assets/decor/curly-arrow.svg" alt="" aria-hidden="true" />
           </div>
-          <div className="home-feature__quote reveal">
+          <div className="home-feature__quote reveal-right">
             <FeaturedQuote quote={heroQuote.home.quote} name={heroQuote.home.name} role={heroQuote.home.role} />
           </div>
         </div>

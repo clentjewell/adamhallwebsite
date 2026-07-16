@@ -7,8 +7,12 @@ export default function TrustBar() {
     <section className="trustbar" aria-label="Why sell to Adam Hall">
       <div className="container container--wide">
         <ul className="trustbar__items">
-          {trustBar.map((item) => (
-            <li key={item.label} className="trustbar__item">
+          {trustBar.map((item, i) => (
+            <li
+              key={item.label}
+              className="trustbar__item reveal"
+              style={{ ['--stagger' as string]: i } as React.CSSProperties}
+            >
               <img src={item.icon} alt="" aria-hidden="true" loading="lazy" width={40} height={40} />
               <span>{item.label}</span>
             </li>

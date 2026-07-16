@@ -1,7 +1,7 @@
 import Button from './Button';
 import './PurpleCta.css';
 
-/** Purple call-to-action band shown near the bottom of every main page. */
+/** Purple call-to-action band — centred stack, as on the live site. */
 export default function PurpleCta() {
   return (
     <section className="pcta bg-purple" aria-label="Get started">

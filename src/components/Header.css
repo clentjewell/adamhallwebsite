@@ -17,6 +17,9 @@
   gap: 1.5rem;
   padding-top: 30px;
   min-height: var(--header-h);
+  /* live header spans the full viewport with 40px side padding, not a container */
+  max-width: none;
+  padding-inline: 40px;
 }
 
 .site-header__logo {

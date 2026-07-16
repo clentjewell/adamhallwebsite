@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <img className="prefooter__wave" src="/assets/decor/wavy-line-short-thick.svg" alt="" aria-hidden="true" />
+          <div className="prefooter__wave" aria-hidden="true" />
         </div>
       </section>
 
