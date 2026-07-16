@@ -171,15 +171,15 @@ export default function Home() {
       <section className="bg-green home-feature">
         <div className="container container--wide home-feature__inner">
           <div className="home-feature__media reveal-zoom">
-            <div className="polaroid">
-              <img
-                src="/assets/images/Adam-Hall-Buy-My-Car-3-Tall.jpg"
-                alt="Adam Hall leaning on a customer's car"
-                loading="lazy"
-                width={380}
-                height={430}
-              />
-            </div>
+            <img
+              className="home-feature__photo"
+              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-1.jpg"
+              alt="Jen and her father at home on the couch"
+              loading="lazy"
+              width={601}
+              height={752}
+            />
+            <span className="home-feature__frame" aria-hidden="true" />
             <img className="home-feature__arrow" src="/assets/decor/curly-arrow.svg" alt="" aria-hidden="true" />
           </div>
           <div className="home-feature__quote reveal-right">

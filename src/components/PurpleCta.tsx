@@ -1,20 +1,25 @@
 import Button from './Button';
 import './PurpleCta.css';
 
-/** Purple call-to-action band — centred stack, as on the live site. */
+/** Purple call-to-action band — centred, with "life's busy" outline pill,
+    tan "Put your feet up" underline, and arrow-shaped "Start with" box. */
 export default function PurpleCta() {
   return (
     <section className="pcta bg-purple" aria-label="Get started">
       <div className="container">
         <div className="pcta__inner reveal">
           <h4 className="pcta__title">
-            Time&rsquo;s precious and life&rsquo;s busy
-            <span>Put your feet up and let Adam do all the leg work.</span>
+            <span className="pcta__line">
+              Time&rsquo;s precious and <span className="pcta__pill">life&rsquo;s busy</span>
+            </span>
+            <span className="pcta__line">
+              <span className="pcta__feet">Put your feet up</span> and let Adam do all the leg
+              work.
+            </span>
           </h4>
           <div className="pcta__action">
             <span className="pcta__start">Start with</span>
-            <img className="pcta__arrow" src="/assets/decor/curly-arrow.svg" alt="" aria-hidden="true" />
-            <Button to="/buy-my-car" variant="green">
+            <Button to="/buy-my-car" variant="green" arrow>
               Buy My Car
             </Button>
           </div>
