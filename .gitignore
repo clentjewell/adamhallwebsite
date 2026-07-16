@@ -14,3 +14,4 @@ dist-ssr
 
 # Analysis / crawl workspace (not part of the app)
 _crawl/
+tsconfig.tsbuildinfo
