@@ -1,4 +1,5 @@
 import { useSeo } from '../lib/seo';
+import { useReveal } from '../hooks/useReveal';
 import { privacyBlocks } from '../data/privacy';
 import './Privacy.css';
 
@@ -9,6 +10,7 @@ export default function Privacy() {
       'Adam Hall Buy My Car privacy policy — how we collect, use, disclose, store and protect your personal information.',
     path: '/privacy-policy',
   });
+  useReveal();
 
   return (
     <>
@@ -19,7 +21,7 @@ export default function Privacy() {
       </section>
 
       <section className="section bg-cream">
-        <article className="container container--narrow privacy-body">
+        <article className="container container--narrow privacy-body reveal">
           {privacyBlocks.map((b, i) =>
             b.type === 'h' ? <h2 key={i}>{b.text}</h2> : <p key={i}>{b.text}</p>
           )}

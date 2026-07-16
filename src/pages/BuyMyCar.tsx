@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSeo } from '../lib/seo';
+import { useReveal } from '../hooks/useReveal';
 import ValuationForm from '../components/ValuationForm';
 import IconList from '../components/IconList';
 import { TestimonialList } from '../components/Testimonials';
@@ -14,6 +15,7 @@ export default function BuyMyCar() {
       'Up-to-the-minute market pricing and decades of experience to help you set the right price for your car. Get a free, obligation-free valuation from Adam Hall.',
     path: '/buy-my-car',
   });
+  useReveal();
 
   return (
     <div className="bmc">
@@ -28,7 +30,7 @@ export default function BuyMyCar() {
       </header>
 
       <div className="bmc__body container container--wide">
-        <div className="bmc__intro">
+        <div className="bmc__intro reveal-left">
           <h1 className="bmc__title">
             <span className="wavy">Buy</span> my car.
           </h1>
@@ -47,13 +49,9 @@ export default function BuyMyCar() {
           />
           <hr className="bmc__rule" />
           <TestimonialList items={buyMyCarTestimonials} />
-          <p className="bmc__phone">
-            Prefer to chat? Call Adam on{' '}
-            <a href={site.phoneHref}>{site.phoneDisplay}</a>
-          </p>
         </div>
 
-        <div className="bmc__form" id="valuation">
+        <div className="bmc__form reveal-right" id="valuation">
           <ValuationForm />
         </div>
       </div>

@@ -2,7 +2,8 @@ import { useSeo } from '../lib/seo';
 import { useReveal } from '../hooks/useReveal';
 import GreenHero from '../components/GreenHero';
 import Accordion from '../components/Accordion';
-import { TestimonialList, FeaturedQuote } from '../components/Testimonials';
+import { TestimonialList } from '../components/Testimonials';
+import FeaturedTestimonial from '../components/FeaturedTestimonial';
 import IconList from '../components/IconList';
 import TrustBar from '../components/TrustBar';
 import FaqSection from '../components/FaqSection';
@@ -71,13 +72,13 @@ export default function HowItWorks() {
       {/* How it works steps — accordion left, photo right */}
       <section className="section bg-cream">
         <div className="container container--wide hiw-steps">
-          <div className="hiw-steps__content reveal">
+          <div className="hiw-steps__content reveal-left">
             <h3 className="hiw-steps__title">
               How it <span className="wavy">works</span>
             </h3>
             <Accordion items={steps} />
           </div>
-          <div className="hiw-steps__media reveal">
+          <div className="hiw-steps__media reveal-right">
             <img
               src="/assets/images/Adam-Hall-Value-My-Car-3.jpg"
               alt="Adam Hall inspecting a car's engine bay"
@@ -121,7 +122,7 @@ export default function HowItWorks() {
       {/* Does the thought sound exhausting */}
       <section className="section bg-white hiw-exhaust-wrap" style={{ paddingTop: 0 }}>
         <div className="container container--wide hiw-exhaust">
-          <div className="hiw-exhaust__media reveal">
+          <div className="hiw-exhaust__media reveal-left">
             <img
               src="/assets/decor/thankyou-welcome.svg"
               alt=""
@@ -131,7 +132,7 @@ export default function HowItWorks() {
               height={300}
             />
           </div>
-          <div className="hiw-exhaust__content reveal">
+          <div className="hiw-exhaust__content reveal-right">
             <h3>Does the thought of selling your car sound exhausting?</h3>
             <p>
               Don&rsquo;t lose sleep trying to work out how best to sell your car. With a simple
@@ -162,15 +163,13 @@ export default function HowItWorks() {
       <TrustBar />
 
       <WaveDivider color="green" />
-      <section className="bg-green hiw-quote">
-        <div className="container container--narrow reveal">
-          <FeaturedQuote
-            quote={heroQuote.howItWorks.quote}
-            name={heroQuote.howItWorks.name}
-            role={heroQuote.howItWorks.role}
-          />
-        </div>
-      </section>
+      <FeaturedTestimonial
+        photo="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-2.jpg"
+        photoAlt="A happy couple at home on their balcony"
+        quote={heroQuote.howItWorks.quote}
+        name={heroQuote.howItWorks.name}
+        role={heroQuote.howItWorks.role}
+      />
       <WaveDivider color="green" flip />
 
       <FaqSection />

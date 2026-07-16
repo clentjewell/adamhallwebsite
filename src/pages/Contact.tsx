@@ -19,7 +19,7 @@ export default function Contact() {
     <>
       <section className="bg-green contact-hero">
         <div className="container container--wide contact-hero__inner">
-          <div className="contact-hero__content">
+          <div className="contact-hero__content reveal-left">
             <h1 className="contact-hero__title">Got Questions?</h1>
             <p className="contact-hero__subtitle">
               I&rsquo;m here to help. Give me a call or fill in the form below and I will get back
@@ -29,7 +29,7 @@ export default function Contact() {
               <span aria-hidden="true">☎</span> {site.phoneDisplay}
             </a>
           </div>
-          <div className="contact-hero__form">
+          <div className="contact-hero__form reveal-right">
             <ContactForm />
           </div>
         </div>

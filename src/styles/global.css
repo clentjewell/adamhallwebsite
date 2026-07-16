@@ -210,6 +210,17 @@ html.js .tgrid__item:nth-child(3n) {
 html.js .trustbar__item {
   transition-delay: calc(var(--stagger, 0) * 0.08s);
 }
+html.js .tlist__item:nth-child(even),
+html.js .about-card:nth-child(2),
+html.js .hiw-promise__card:nth-child(even) {
+  transition-delay: 0.12s;
+}
+html.js .about-card:nth-child(3) {
+  transition-delay: 0.24s;
+}
+html.js .ap.reveal {
+  transition-duration: 0.7s;
+}
 
 /* Hero content entrance on page load */
 @keyframes hero-in {

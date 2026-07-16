@@ -2,7 +2,8 @@ import { useSeo } from '../lib/seo';
 import { useReveal } from '../hooks/useReveal';
 import TrustBar from '../components/TrustBar';
 import IconList from '../components/IconList';
-import { TestimonialGrid, FeaturedQuote } from '../components/Testimonials';
+import { TestimonialGrid } from '../components/Testimonials';
+import FeaturedTestimonial from '../components/FeaturedTestimonial';
 import FaqSection from '../components/FaqSection';
 import PurpleCta from '../components/PurpleCta';
 import Button from '../components/Button';
@@ -167,26 +168,14 @@ export default function Home() {
 
       <WaveDivider color="green" />
 
-      {/* Featured testimonial: polaroid-framed photo + quote */}
-      <section className="bg-green home-feature">
-        <div className="container container--wide home-feature__inner">
-          <div className="home-feature__media reveal-zoom">
-            <img
-              className="home-feature__photo"
-              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-1.jpg"
-              alt="Jen and her father at home on the couch"
-              loading="lazy"
-              width={601}
-              height={752}
-            />
-            <span className="home-feature__frame" aria-hidden="true" />
-            <img className="home-feature__arrow" src="/assets/decor/curly-arrow.svg" alt="" aria-hidden="true" />
-          </div>
-          <div className="home-feature__quote reveal-right">
-            <FeaturedQuote quote={heroQuote.home.quote} name={heroQuote.home.name} role={heroQuote.home.role} />
-          </div>
-        </div>
-      </section>
+      {/* Featured testimonial */}
+      <FeaturedTestimonial
+        photo="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-1.jpg"
+        photoAlt="Jen and her father at home on the couch"
+        quote={heroQuote.home.quote}
+        name={heroQuote.home.name}
+        role={heroQuote.home.role}
+      />
 
       <TestimonialGrid items={homeTestimonials} />
 

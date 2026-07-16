@@ -17,9 +17,8 @@ export default function Listen() {
       "Listen to Adam Hall's ‘What's Your Car Worth’ segment on 4CRB 89.3FM — up-to-the-minute market pricing and expert car-buying advice, live on air.",
     path: '/listen-whats-your-car-worth',
   });
-  useReveal([]);
-
   const [shown, setShown] = useState(PAGE_SIZE);
+  useReveal([shown]);
   const visible = episodes.slice(0, shown);
 
   return (
@@ -36,7 +35,7 @@ export default function Listen() {
       <section className="section bg-cream">
         <div className="container container--wide listen">
           <div className="listen__side">
-            <h3 className="listen__title reveal">
+            <h3 className="listen__title reveal-left">
               Latest <span className="wavy">Programs</span>
             </h3>
           </div>

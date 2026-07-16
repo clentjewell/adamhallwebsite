@@ -60,7 +60,7 @@ export default function AudioPlayer({ episode }: { episode: Episode }) {
   };
 
   return (
-    <article className="ap">
+    <article className="ap reveal">
       <div className="ap__main">
         <img
           className="ap__cover"

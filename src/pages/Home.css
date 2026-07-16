@@ -202,52 +202,6 @@
   }
 }
 
-/* --- Featured testimonial band ---
-   From the reference: photo (601x752, r8) near the left viewport edge;
-   the EMPTY photo-frame.svg overlaps it (74.5% of photo width, offset 31%
-   from its left, 7% from its top, hanging 35px past its right edge);
-   curly arrow points up at the frame's bottom-right; quote right. */
-.home-feature {
-  padding-block: clamp(2.5rem, 6vw, 5rem);
-}
-.home-feature__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 34%) 1fr;
-  align-items: center;
-  gap: clamp(2.5rem, 11vw, 164px);
-  max-width: none;
-  padding-inline: clamp(1.25rem, 3.3vw, 48px) clamp(1.25rem, 2.4vw, 34px);
-}
-.home-feature__media {
-  position: relative;
-}
-.home-feature__photo {
-  width: 100%;
-  aspect-ratio: 601 / 752;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-}
-.home-feature__frame {
-  position: absolute;
-  left: 31%;
-  top: 7%;
-  width: 74.5%;
-  aspect-ratio: 362 / 396;
-  background: url('/assets/decor/photo-frame.svg') center / contain no-repeat;
-  pointer-events: none;
-}
-.home-feature__arrow {
-  position: absolute;
-  right: -17%;
-  bottom: 9%;
-  width: 115px;
-  transform: rotate(15deg);
-}
-.home-feature__quote {
-  max-width: 46rem;
-}
-
 /* --- Voice section --- */
 .home-voice__logo {
   height: 56px;
@@ -283,14 +237,6 @@
     order: 0;
   }
   .home-badge {
-    display: none;
-  }
-  .home-feature__inner {
-    grid-template-columns: 1fr;
-    max-width: 26rem;
-    margin-inline: auto;
-  }
-  .home-feature__arrow {
     display: none;
   }
 }

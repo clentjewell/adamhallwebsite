@@ -166,7 +166,7 @@ export default function About() {
       {/* Values */}
       <section className="section bg-cream">
         <div className="container container--wide about-values">
-          <div className="about-values__media reveal">
+          <div className="about-values__media reveal-left">
             <img
               src="/assets/images/Adam-Hall-Value-My-Car-2.jpg"
               alt="Adam Hall with a customer and their car"
@@ -175,7 +175,7 @@ export default function About() {
               height={520}
             />
           </div>
-          <div className="about-values__content reveal">
+          <div className="about-values__content reveal-right">
             <h3>
               Some of the <span className="wavy">values</span> we hold deeply
             </h3>

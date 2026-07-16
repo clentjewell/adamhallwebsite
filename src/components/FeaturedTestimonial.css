@@ -1,0 +1,55 @@
+/* Featured testimonial band — geometry measured from the reference site:
+   photo (486x608 at 1440) near the left edge; the EMPTY photo-frame.svg
+   (362x396) overlaps it, offset 31% from its left and 7% from its top,
+   hanging past its right edge; curly arrow points up at the frame. */
+.ftest {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.ftest__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 34%) 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 11vw, 164px);
+  max-width: none;
+  padding-inline: clamp(1.25rem, 3.3vw, 48px) clamp(1.25rem, 2.4vw, 34px);
+}
+.ftest__media {
+  position: relative;
+}
+.ftest__photo {
+  width: 100%;
+  aspect-ratio: 601 / 752;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.ftest__frame {
+  position: absolute;
+  left: 31%;
+  top: 7%;
+  width: 74.5%;
+  aspect-ratio: 362 / 396;
+  background: url('/assets/decor/photo-frame.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+.ftest__arrow {
+  position: absolute;
+  right: -17%;
+  bottom: 9%;
+  width: 115px;
+  transform: rotate(15deg);
+}
+.ftest__quote {
+  max-width: 46rem;
+}
+
+@media (max-width: 900px) {
+  .ftest__inner {
+    grid-template-columns: 1fr;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+  .ftest__arrow {
+    display: none;
+  }
+}

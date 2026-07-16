@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { valuationFields, FORM_ENDPOINT } from '../data/formConfig';
+import type { FieldDef } from '../data/formConfig';
 import './ValuationForm.css';
 
 type Values = Record<string, string>;
@@ -7,9 +8,17 @@ type Errors = Record<string, string>;
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function validate(values: Values): Errors {
+/* Live form is a two-step Forminator wizard:
+   step 1 = car details, step 2 = contact details, submit = "Send to Adam". */
+const STEPS: string[][] = [
+  ['car', 'condition', 'kilometres', 'location'],
+  ['name', 'phone', 'email', 'notes'],
+];
+
+function validate(values: Values, names: string[]): Errors {
   const errs: Errors = {};
   for (const f of valuationFields) {
+    if (!names.includes(f.name)) continue;
     const v = (values[f.name] || '').trim();
     if (f.required && (!v || (f.type === 'select' && v === 'Select One'))) {
       errs[f.name] = 'This field is required';
@@ -25,9 +34,79 @@ function validate(values: Values): Errors {
   return errs;
 }
 
+function Field({
+  f,
+  value,
+  err,
+  onChange,
+}: {
+  f: FieldDef;
+  value: string;
+  err?: string;
+  onChange: (v: string) => void;
+}) {
+  const id = `vf-${f.name}`;
+  return (
+    <div className={`vform__field ${err ? 'has-error' : ''}`}>
+      <label htmlFor={id}>
+        {f.label}
+        {f.required && <span className="vform__req" aria-hidden="true"> *</span>}
+      </label>
+      {f.type === 'select' ? (
+        <select
+          id={id}
+          name={f.name}
+          required={f.required}
+          value={value || 'Select One'}
+          aria-invalid={!!err}
+          aria-describedby={err ? `${id}-err` : undefined}
+          onChange={(e) => onChange(e.target.value)}
+        >
+          {f.options!.map((o) => (
+            <option key={o} value={o} disabled={o === 'Select One'}>
+              {o}
+            </option>
+          ))}
+        </select>
+      ) : f.type === 'textarea' ? (
+        <textarea
+          id={id}
+          name={f.name}
+          rows={4}
+          placeholder={f.placeholder}
+          value={value}
+          aria-invalid={!!err}
+          aria-describedby={err ? `${id}-err` : undefined}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      ) : (
+        <input
+          id={id}
+          name={f.name}
+          type={f.type}
+          inputMode={f.type === 'tel' ? 'tel' : f.name === 'kilometres' ? 'numeric' : undefined}
+          placeholder={f.placeholder}
+          required={f.required}
+          autoComplete={f.autoComplete}
+          value={value}
+          aria-invalid={!!err}
+          aria-describedby={err ? `${id}-err` : undefined}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      )}
+      {err && (
+        <span className="vform__error" id={`${id}-err`}>
+          {err}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function ValuationForm() {
   const [values, setValues] = useState<Values>({ condition: 'Select One' });
   const [errors, setErrors] = useState<Errors>({});
+  const [step, setStep] = useState(0);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const set = (name: string, value: string) => {
@@ -35,15 +114,29 @@ export default function ValuationForm() {
     if (errors[name]) setErrors((e) => ({ ...e, [name]: '' }));
   };
 
+  const focusFirstError = () => {
+    setTimeout(() => {
+      document
+        .querySelector<HTMLElement>(
+          '.vform__field.has-error input, .vform__field.has-error select, .vform__field.has-error textarea'
+        )
+        ?.focus();
+    }, 0);
+  };
+
+  const next = () => {
+    const errs = validate(values, STEPS[0]);
+    setErrors(errs);
+    if (Object.keys(errs).length) return focusFirstError();
+    setStep(1);
+  };
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const errs = validate(values);
+    if (step === 0) return next();
+    const errs = validate(values, STEPS[1]);
     setErrors(errs);
-    if (Object.keys(errs).length) {
-      const first = document.querySelector<HTMLElement>('.vform__field.has-error input, .vform__field.has-error select, .vform__field.has-error textarea');
-      first?.focus();
-      return;
-    }
+    if (Object.keys(errs).length) return focusFirstError();
     setStatus('submitting');
     try {
       if (FORM_ENDPOINT) {
@@ -77,6 +170,8 @@ export default function ValuationForm() {
     );
   }
 
+  const stepFields = valuationFields.filter((f) => STEPS[step].includes(f.name));
+
   return (
     <form className="vform" onSubmit={onSubmit} noValidate aria-label="Car valuation request">
       {status === 'error' && (
@@ -85,69 +180,31 @@ export default function ValuationForm() {
           <a href="tel:0404290617">0404 290 617</a>.
         </p>
       )}
-      {valuationFields.map((f) => {
-        const err = errors[f.name];
-        const id = `vf-${f.name}`;
-        return (
-          <div className={`vform__field ${err ? 'has-error' : ''}`} key={f.name}>
-            <label htmlFor={id}>
-              {f.label}
-              {f.required && <span className="vform__req" aria-hidden="true"> *</span>}
-            </label>
-            {f.type === 'select' ? (
-              <select
-                id={id}
-                name={f.name}
-                required={f.required}
-                value={values[f.name] || 'Select One'}
-                aria-invalid={!!err}
-                aria-describedby={err ? `${id}-err` : undefined}
-                onChange={(e) => set(f.name, e.target.value)}
-              >
-                {f.options!.map((o) => (
-                  <option key={o} value={o} disabled={o === 'Select One'}>
-                    {o}
-                  </option>
-                ))}
-              </select>
-            ) : f.type === 'textarea' ? (
-              <textarea
-                id={id}
-                name={f.name}
-                rows={4}
-                placeholder={f.placeholder}
-                value={values[f.name] || ''}
-                aria-invalid={!!err}
-                aria-describedby={err ? `${id}-err` : undefined}
-                onChange={(e) => set(f.name, e.target.value)}
-              />
-            ) : (
-              <input
-                id={id}
-                name={f.name}
-                type={f.type}
-                inputMode={f.type === 'tel' ? 'tel' : f.name === 'kilometres' ? 'numeric' : undefined}
-                placeholder={f.placeholder}
-                required={f.required}
-                autoComplete={f.autoComplete}
-                value={values[f.name] || ''}
-                aria-invalid={!!err}
-                aria-describedby={err ? `${id}-err` : undefined}
-                onChange={(e) => set(f.name, e.target.value)}
-              />
-            )}
-            {err && (
-              <span className="vform__error" id={`${id}-err`}>
-                {err}
-              </span>
-            )}
-          </div>
-        );
-      })}
 
-      <button className="vform__submit" type="submit" disabled={status === 'submitting'}>
-        {status === 'submitting' ? 'Submitting…' : 'Submit'}
-      </button>
+      <p className="vform__step" aria-live="polite">
+        Step {step + 1} of 2
+      </p>
+
+      {stepFields.map((f) => (
+        <Field key={f.name} f={f} value={values[f.name] || ''} err={errors[f.name]} onChange={(v) => set(f.name, v)} />
+      ))}
+
+      <div className="vform__nav">
+        {step === 1 && (
+          <button type="button" className="vform__back" onClick={() => setStep(0)}>
+            ← Back
+          </button>
+        )}
+        {step === 0 ? (
+          <button type="button" className="vform__submit" onClick={next}>
+            Next
+          </button>
+        ) : (
+          <button className="vform__submit" type="submit" disabled={status === 'submitting'}>
+            {status === 'submitting' ? 'Sending…' : 'Send to Adam'}
+          </button>
+        )}
+      </div>
       <p className="vform__note">Obligation-free. No cost. No pressure.</p>
     </form>
   );
