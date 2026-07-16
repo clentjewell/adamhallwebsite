@@ -51,13 +51,10 @@ export default function Home() {
             <Button href={site.phoneHref} variant="tan" arrow>
               Call Adam {site.phoneDisplay}
             </Button>
-            <img
-              className="hero__4crb"
-              src="/assets/logos/4crb-white.png"
-              alt="4CRB 89.3FM"
-              width={110}
-              height={55}
-            />
+            <span className="hero__featured">
+              <span>Featured On</span>
+              <img src="/assets/logos/4crb-white.png" alt="4CRB 89.3FM" width={110} height={55} />
+            </span>
           </div>
         </div>
       </section>
@@ -104,8 +101,8 @@ export default function Home() {
           </div>
           <div className="home-split__media reveal">
             <img
-              src="/assets/images/Adam-Hall-Value-My-Car.jpg"
-              alt="Adam Hall giving a car valuation at a customer's home"
+              src="/assets/images/Adam-Hall-Buy-My-Car-1-Long.jpg"
+              alt="Adam Hall shaking hands with a customer at their home"
               loading="lazy"
               width={640}
               height={480}
@@ -123,13 +120,29 @@ export default function Home() {
       {/* Buy my car — image left, rotating hassle-free badge */}
       <section className="section bg-cream home-buy" style={{ paddingTop: 0 }}>
         <div className="container container--wide home-split home-split--media-left">
-          <div className="home-split__media reveal">
+          <div className="home-split__media home-split__media--collage reveal">
             <img
-              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast.jpg"
-              alt="Adam Hall helping a family sell their car"
+              src="/assets/images/Adam-Hall-Value-My-Car.jpg"
+              alt="Adam Hall talking with a customer through their car window"
               loading="lazy"
               width={640}
               height={480}
+            />
+            <img
+              className="home-split__collage"
+              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast.jpg"
+              alt="Adam Hall helping a family sell their car"
+              loading="lazy"
+              width={320}
+              height={240}
+            />
+            <img
+              className="home-badge"
+              src="/assets/icons/hassle-free-guarantee.svg"
+              alt="Adam Hall hassle-free guarantee"
+              loading="lazy"
+              width={110}
+              height={110}
             />
           </div>
           <div className="home-split__content reveal">
@@ -150,14 +163,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img
-          className="home-badge"
-          src="/assets/icons/hassle-free-guarantee.svg"
-          alt="Adam Hall hassle-free guarantee"
-          loading="lazy"
-          width={110}
-          height={110}
-        />
       </section>
 
       <WaveDivider color="green" />
@@ -214,6 +219,11 @@ export default function Home() {
                   '10,000 car valuations live on air and counting!',
                 ]}
               />
+              <div className="home-actions">
+                <Button to="/buy-my-car" variant="purple" arrow>
+                  Buy My Car
+                </Button>
+              </div>
             </div>
             <div className="home-split__media reveal">
               <img

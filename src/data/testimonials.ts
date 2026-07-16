@@ -7,7 +7,7 @@ export interface Testimonial {
 /* Home "Happy Customers" grid (3 x 3, five-star) */
 export const homeTestimonials: Testimonial[] = [
   { quote: 'I will only sell my cars to Adam' },
-  { quote: 'Adam made the entire process easy' },
+  { quote: 'Adam made the entire process easy.' },
   { quote: 'The money was in my account the same day' },
   { quote: 'I cannot recommend Adam highly enough!' },
   { quote: 'Thankyou, thankyou, thankyou Adam' },

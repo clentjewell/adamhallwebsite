@@ -19,7 +19,9 @@ export function TestimonialGrid({
         <ul className="tgrid__list">
           {items.map((t, i) => (
             <li key={i} className="tgrid__item reveal">
-              <Stars className="stars--purple" />
+              <span className="tgrid__rating" role="img" aria-label="5 out of 5 stars">
+                5<Stars count={1} className="stars--purple" />
+              </span>
               <p>{t.quote}</p>
             </li>
           ))}
@@ -65,7 +67,7 @@ export function FeaturedQuote({
       <blockquote>{quote}</blockquote>
       <figcaption>
         <strong>{name}</strong>
-        {role ? <span> {role}</span> : null}
+        {role ? <span>{role}</span> : null}
       </figcaption>
     </figure>
   );

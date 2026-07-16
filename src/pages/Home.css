@@ -24,9 +24,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* top padding clears the absolutely-positioned header */
-  padding: calc(var(--header-h) + 2rem) clamp(1.5rem, 6vw, 6.5rem) clamp(2.5rem, 5vw, 4.5rem);
-  max-width: 50rem;
+  /* top padding clears the absolutely-positioned header; live text box is ~716px wide */
+  padding: calc(var(--header-h) + 2rem) clamp(1.25rem, 5vw, 4.7rem) clamp(2.5rem, 5vw, 4.5rem)
+    clamp(1.25rem, 6vw, 5.4rem);
+  max-width: none;
 }
 .hero__title {
   font-size: var(--fs-hero);
@@ -49,7 +50,20 @@
   gap: 2rem;
   flex-wrap: wrap;
 }
-.hero__4crb {
+.hero__featured {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.hero__featured > span {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.hero__featured img {
   height: 46px;
   width: auto;
 }
@@ -93,11 +107,29 @@
 .home-split__media {
   position: relative;
 }
-.home-split__media > img:not(.home-split__bubbles) {
+.home-split__media > img:first-child {
   width: 100%;
   border-radius: 4px;
   object-fit: cover;
   aspect-ratio: 4 / 3;
+}
+
+/* Full-bleed: photos run to the viewport edge on their side, as on the live site */
+@media (min-width: 1161px) {
+  .home-split:not(.home-split--media-left) .home-split__media {
+    margin-right: calc((1160px - 100vw) / 2);
+  }
+  .home-split:not(.home-split--media-left) .home-split__media > img:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .home-split--media-left .home-split__media {
+    margin-left: calc((1160px - 100vw) / 2);
+  }
+  .home-split--media-left .home-split__media > img:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 .home-split__bubbles {
   position: absolute;
@@ -119,16 +151,33 @@
   margin-top: 1.8rem;
 }
 
-/* Rotating hassle-free guarantee badge */
+/* Buy-section photo collage: main photo + smaller family photo + rotating badge,
+   matching the live composition */
 .home-buy {
   position: relative;
 }
-.home-badge {
+.home-split__media--collage {
+  padding-bottom: 70px; /* room for the offset collage photo */
+}
+.home-split__collage {
   position: absolute;
-  left: clamp(1rem, 6vw, 7rem);
-  bottom: -55px;
-  width: 110px;
-  height: 110px;
+  right: 4%;
+  bottom: -18px;
+  width: 52%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+.home-split__media .home-badge {
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+  width: 110px !important;
+  height: 110px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 0;
   animation: badge-spin 18s linear infinite;
   z-index: 2;
 }
