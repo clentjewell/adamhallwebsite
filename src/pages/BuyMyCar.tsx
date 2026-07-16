@@ -17,7 +17,7 @@ export default function BuyMyCar() {
 
   return (
     <div className="bmc">
-      <header className="bmc__top container container--wide">
+      <header className="bmc__top">
         <Link to="/" className="bmc__logo" aria-label="Adam Hall Buy My Car — home">
           <img src="/assets/logos/logo-black.svg" alt="Adam Hall Buy My Car" width={200} height={90} />
         </Link>
@@ -58,7 +58,7 @@ export default function BuyMyCar() {
         </div>
       </div>
 
-      <footer className="bmc__foot container container--wide">
+      <footer className="bmc__foot">
         <p>{site.copyright}</p>
         <Link to="/privacy-policy">Privacy Policy</Link>
       </footer>

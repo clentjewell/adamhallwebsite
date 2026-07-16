@@ -124,9 +124,40 @@ export default function About() {
           </h3>
           <StatCounter
             stats={[
-              { end: 10000, suffix: '+', title: 'Cars Valued Live on Air' },
-              { end: 1000, suffix: '+', title: 'Happy Customers' },
-              { end: 3000000, prefix: '$', suffix: '+', title: 'Dollars in cars sold to Adam this year!' },
+              {
+                end: 10000,
+                suffix: '+',
+                title: 'Cars Valued Live on Air',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="9" y="2" width="6" height="12" rx="3" />
+                    <path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8" />
+                  </svg>
+                ),
+              },
+              {
+                end: 1000,
+                suffix: '+',
+                title: 'Happy Customers',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 21s-7-4.6-9.5-8.5C.6 9.2 2.4 5.5 6 5.5c2 0 3.3 1 4 2 .7-1 2-2 4-2 3.6 0 5.4 3.7 3.5 7-2.5 3.9-9.5 8.5-9.5 8.5z" />
+                    <path d="M7 12l2.5-2 2 1.5L14 9.5l2 1.5" />
+                  </svg>
+                ),
+              },
+              {
+                end: 3000000,
+                prefix: '$',
+                suffix: '+',
+                title: 'Dollars in cars sold to Adam this year!',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9.5" />
+                    <path d="M12 6.5v11M15 8.8c-.7-1-1.8-1.4-3-1.4-1.7 0-3 .9-3 2.3 0 2.9 6 1.7 6 4.6 0 1.4-1.3 2.3-3 2.3-1.2 0-2.3-.4-3-1.4" />
+                  </svg>
+                ),
+              },
             ]}
           />
         </div>

@@ -5,14 +5,15 @@
   flex-direction: column;
 }
 .bmc__top {
+  /* live: full-width header, logo at x=47, featured group ending 40px from right */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.75rem;
+  padding: 30px 40px 0 47px;
   gap: 1rem;
 }
 .bmc__logo img {
-  width: 200px;
+  width: 220px;
   height: auto;
 }
 .bmc__featured {
@@ -35,12 +36,13 @@
 }
 
 .bmc__body {
+  /* live: content 540px | gap 100px | form 560px inside the 1200px container */
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: 1fr minmax(0, 560px);
+  gap: clamp(2rem, 7vw, 100px);
   align-items: start;
-  padding-block: clamp(2.5rem, 6vw, 5rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 .bmc__title {
   font-size: clamp(2.4rem, 5vw, 3.5rem);
@@ -74,14 +76,19 @@
 }
 
 .bmc__foot {
+  /* live: single centred line, 16px grey */
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem 1.5rem;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   padding-block: 2rem;
-  font-size: 0.85rem;
-  color: var(--c-black);
+  font-size: 1rem;
+  color: var(--c-text);
+}
+.bmc__foot p {
+  margin: 0;
+  white-space: nowrap;
 }
 .bmc__foot a:hover {
   color: var(--c-green);
