@@ -1,0 +1,99 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.95em 1.9em;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition),
+    color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--purple {
+  background: var(--c-purple);
+  color: var(--c-green);
+  border-color: var(--c-purple);
+}
+.btn--purple:hover {
+  background: var(--c-purple-dark);
+  border-color: var(--c-purple-dark);
+}
+
+.btn--green {
+  background: var(--c-green);
+  color: var(--c-white);
+  border-color: var(--c-green);
+}
+.btn--green:hover {
+  background: var(--c-green-deep);
+}
+
+.btn--white {
+  background: var(--c-white);
+  color: var(--c-green);
+  border-color: var(--c-white);
+}
+.btn--white:hover {
+  background: var(--c-cream);
+}
+
+.btn--black {
+  background: var(--c-black);
+  color: var(--c-white);
+  border-color: var(--c-black);
+}
+.btn--black:hover {
+  background: var(--c-dark);
+}
+
+.btn--tan {
+  background: var(--c-tan);
+  color: var(--c-dark);
+  border-color: var(--c-tan);
+}
+.btn--tan:hover {
+  background: #eccf9e;
+  border-color: #eccf9e;
+}
+
+.btn__arrow {
+  font-family: var(--font-body);
+  line-height: 1;
+  transition: transform var(--transition);
+}
+.btn:hover .btn__arrow {
+  transform: translateX(3px);
+}
+
+.btn--outline-green {
+  background: transparent;
+  color: var(--c-green);
+  border-color: var(--c-green);
+}
+.btn--outline-green:hover {
+  background: var(--c-green);
+  color: var(--c-white);
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn--outline-white:hover {
+  background: var(--c-white);
+  color: var(--c-green);
+  border-color: var(--c-white);
+}

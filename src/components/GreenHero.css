@@ -1,0 +1,82 @@
+.ghero {
+  position: relative;
+}
+
+/* --- centred variant --- */
+.ghero--centered .ghero__inner {
+  text-align: center;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ghero--centered .ghero__subtitle {
+  margin-inline: auto;
+}
+
+/* --- text variant (left aligned) --- */
+.ghero--text .ghero__inner {
+  padding-block: clamp(3rem, 7vw, 6rem);
+  max-width: var(--container-wide);
+}
+.ghero--text .ghero__title,
+.ghero--text .ghero__subtitle {
+  text-align: left;
+}
+.ghero--text .ghero__subtitle {
+  margin-inline: 0;
+}
+
+.ghero__title {
+  font-size: var(--fs-hero);
+  line-height: 1.12;
+  margin-bottom: 0.6rem;
+  color: var(--c-white);
+}
+.ghero__subtitle {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  max-width: 36rem;
+  margin-bottom: 0;
+}
+.ghero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+.ghero--centered .ghero__actions {
+  justify-content: center;
+}
+.eyebrow--hero {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- bridge photo: hangs half out of the green band into the section below --- */
+.ghero.has-bridge .ghero__inner {
+  /* room for the top half of the photo that overlaps the green band */
+  padding-bottom: calc(clamp(2rem, 4vw, 3rem) + var(--bridge-overlap));
+}
+:root {
+  --bridge-overlap: clamp(130px, 18vw, 260px);
+}
+.ghero__bridgewrap--white {
+  background: var(--c-white);
+}
+.ghero__bridgewrap--cream {
+  background: var(--c-cream);
+}
+.ghero__bridge {
+  display: flex;
+  justify-content: center;
+}
+.ghero__bridge img {
+  width: min(880px, 100%);
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  display: block;
+  margin-top: calc(-1 * var(--bridge-overlap));
+  position: relative;
+  z-index: 2; /* paint the overlapping half above the green band */
+}

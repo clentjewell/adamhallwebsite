@@ -1,0 +1,166 @@
+import { useSeo } from '../lib/seo';
+import { useReveal } from '../hooks/useReveal';
+import GreenHero from '../components/GreenHero';
+import StatCounter from '../components/StatCounter';
+import PurpleCta from '../components/PurpleCta';
+import './About.css';
+
+const simplifyCards = [
+  {
+    n: '01',
+    title: 'A trusted guide',
+    body: 'We guide you with helpful, free, expert advice built on decades of experience for peace of mind.',
+  },
+  {
+    n: '02',
+    title: 'Happy customers',
+    body: 'Get the result you want with a heartfelt handshake, warm smile and the help you need.',
+  },
+  {
+    n: '03',
+    title: 'Hassle-free',
+    body: "We keep the process easy and convenient. Because you've got better things to do with your time.",
+  },
+];
+
+const values = [
+  {
+    title: 'Customer-centric',
+    body: 'Happy customers are our lifeblood, so we strive to make everything we do as easy as possible.',
+  },
+  {
+    title: 'Break the mould',
+    body: 'Holding ourselves to the highest standards of integrity, we hope to be like an old friend, and look after you the same way we would a family member.',
+  },
+  { title: 'Open & honest', body: 'We speak openly, honestly and respectfully.' },
+  { title: 'Welcoming', body: 'We humbly seek to serve you.' },
+];
+
+export default function About() {
+  useSeo({
+    title: 'Adam Hall “What’s your car worth?” 4CRB 89.3FM | Up-to-the-minute market pricing',
+    description:
+      'Adam Hall has been a Gold Coast local for over 40 years and spent his entire career in the automotive industry. Read Adam’s story.',
+    path: '/about-adam-hall',
+  });
+  useReveal();
+
+  return (
+    <>
+      <GreenHero
+        title={
+          <>
+            Adam&rsquo;s <span className="wavy">story.</span>
+          </>
+        }
+        subtitle="Adam Hall has been serving the community for almost three decades."
+        bridgeImage="/assets/images/Adam-Hall-Gold-Coast.jpg"
+        bridgeAlt="Adam Hall standing in a doorway at home on the Gold Coast"
+        bridgeBg="cream"
+      />
+
+      {/* Bio */}
+      <section className="section bg-cream" style={{ paddingTop: 0 }}>
+        <div className="container container--narrow about-bio reveal">
+          <h3 className="wavy about-bio__title">Bio</h3>
+          <p>Adam has been a Gold Coast local for over 40 years and has spent his entire career in the automotive industry.</p>
+          <p>
+            He became a dealer principal and shareholder of his own dealership and has represented
+            major manufacturers including Toyota, Ford, Holden, Honda, Mitsubishi, KIA, and Suzuki,
+            to name a few.
+          </p>
+          <p>In 2010, Adam was invited to present a live radio show called <em>What&rsquo;s Your Car Worth</em> on 89.3 4CRB FM.</p>
+          <p>From day one, the show was well received by the local community.</p>
+          <p>To date, Adam has provided over 10,000 car valuations to residents of the Gold Coast and surrounding area residents.</p>
+          <p>Amazingly, these were all live on air.</p>
+          <p>His segment is often said to be the fastest 30 minutes in radio; there is always a high volume of callers, keen to seek Adam&rsquo;s advice.</p>
+          <p>Adam insists on providing open and transparent information to listeners.</p>
+          <p>It is typical of his approach generally, without all the fuss normally associated with buying and selling cars.</p>
+          <p>
+            After listening to and speaking with thousands of callers over the years live on air,
+            Adam discovered that many people just wanted a simple solution to selling their car that
+            avoids the pitfalls, the &lsquo;tyre kickers&rsquo; and the hassle of selling privately
+            or trading it in through a dealership.
+          </p>
+          <p>Adam spent a lot of time thinking about this feedback and decided to create a car buying service for the local community that was:</p>
+          <ul className="about-bio__list">
+            <li>Stress-free</li>
+            <li>Convenient</li>
+            <li>Easy</li>
+            <li>Safe</li>
+            <li>Super fast (you can receive payment the same day, though we usually allow 24 hours)</li>
+          </ul>
+          <p>Hundreds of customers have sold their car to Adam, and the positive feedback continues to be outstanding.</p>
+          <p>Adam is incredibly grateful for the community support for this new business.</p>
+          <p className="about-bio__from">From Adam:</p>
+          <blockquote className="about-bio__quote">
+            &ldquo;I am incredibly grateful for the community support for my new business and look
+            forward to assisting many more people in the future.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Simplify cards */}
+      <section className="section bg-cream" style={{ paddingTop: 0 }}>
+        <div className="container container--wide">
+          <h4 className="about-simplify__title reveal">Let Adam simplify the car sales process for you.</h4>
+          <div className="about-cards">
+            {simplifyCards.map((c) => (
+              <div className="about-card reveal" key={c.n}>
+                <span className="about-card__n">{c.n}</span>
+                <h5>{c.title}</h5>
+                <p>{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* By the numbers */}
+      <section className="section bg-green about-numbers">
+        <div className="container container--wide reveal">
+          <h3 className="about-numbers__title">
+            By the <span className="wavy wavy--white">numbers</span>
+          </h3>
+          <StatCounter
+            stats={[
+              { end: 10000, suffix: '+', title: 'Cars Valued Live on Air' },
+              { end: 1000, suffix: '+', title: 'Happy Customers' },
+              { end: 3000000, prefix: '$', suffix: '+', title: 'Dollars in cars sold to Adam this year!' },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="section bg-cream">
+        <div className="container container--wide about-values">
+          <div className="about-values__media reveal">
+            <img
+              src="/assets/images/Adam-Hall-Value-My-Car-2.jpg"
+              alt="Adam Hall with a customer and their car"
+              loading="lazy"
+              width={560}
+              height={520}
+            />
+          </div>
+          <div className="about-values__content reveal">
+            <h3>
+              Some of the <span className="wavy">values</span> we hold deeply
+            </h3>
+            <dl className="about-values__list">
+              {values.map((v) => (
+                <div key={v.title}>
+                  <dt>{v.title}</dt>
+                  <dd>{v.body}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <PurpleCta />
+    </>
+  );
+}

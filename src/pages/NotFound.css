@@ -1,0 +1,32 @@
+.nf {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+.nf__inner {
+  text-align: center;
+}
+.nf__code {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(4rem, 12vw, 8rem);
+  line-height: 1;
+  color: var(--c-purple);
+  margin: 0;
+}
+.nf h1 {
+  font-size: var(--fs-h3);
+  margin-bottom: 1rem;
+}
+.nf__text {
+  max-width: 30rem;
+  margin: 0 auto 2rem;
+  color: var(--c-text);
+  font-size: 1.1rem;
+}
+.nf__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
