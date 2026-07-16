@@ -46,8 +46,7 @@
 .hero__actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 .hero__featured {
@@ -88,15 +87,15 @@
 
 /* --- Split content/media sections --- */
 .home-split {
-  /* live: content ~49% | photo 738px (51%) */
+  /* live: content 458px | gap ~104px | photo 738px (598px col + 140px bleed) */
   display: grid;
-  grid-template-columns: 1fr minmax(0, 54%);
+  grid-template-columns: 1fr minmax(0, 51.5%);
   align-items: center;
-  gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(2.5rem, 7.2vw, 6.5rem);
 }
 .home-split--media-left {
-  /* live: photo 652px (45%) | content */
-  grid-template-columns: minmax(0, 48%) 1fr;
+  /* live: photo 652px (512px col + 140px bleed) | content */
+  grid-template-columns: minmax(0, 44%) 1fr;
 }
 .home-split__title {
   font-size: var(--fs-h3);
@@ -182,7 +181,7 @@
 .home-split__media .home-badge {
   /* live: 213px badge at ~29% across, straddling the photo's bottom edge */
   position: absolute;
-  left: 22%;
+  left: 29%;
   bottom: -10px;
   width: 213px !important;
   height: 213px !important;
@@ -208,27 +207,36 @@
   padding-block: clamp(2.5rem, 6vw, 5rem);
 }
 .home-feature__inner {
+  /* live: frame 362px at x=268, quote 558px at x=690 -> centred pair, 60px gap */
   display: grid;
-  grid-template-columns: minmax(0, 362px) 1fr; /* live frame: 362x396 */
+  grid-template-columns: 362px minmax(0, 560px);
   align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: 60px;
   justify-content: center;
+  padding-left: clamp(0px, 2.7vw, 39px); /* live block sits at x=268 */
 }
 .home-feature__media {
   position: relative;
 }
+/* Exact live construction: photo behind, photo-frame.svg (362x396) on top */
 .polaroid {
-  border: 10px solid var(--c-purple);
-  border-bottom-width: 56px;
-  border-radius: 26px;
-  overflow: hidden;
-  background: var(--c-purple);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 362 / 396;
+}
+.polaroid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/assets/decor/photo-frame.svg') center / contain no-repeat;
 }
 .polaroid img {
-  width: 100%;
-  aspect-ratio: 8 / 9;
+  position: absolute;
+  inset: 4px 4px 66px;
+  width: calc(100% - 8px);
+  height: calc(100% - 70px);
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 12px;
   display: block;
 }
 .home-feature__arrow {

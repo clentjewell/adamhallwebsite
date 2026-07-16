@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <div className="site-header__inner container container--wide">
+      <div className="site-header__inner">
         <Link to="/" className="site-header__logo" aria-label="Adam Hall Buy My Car — home">
           <img src="/assets/logos/logo-black.svg" alt="Adam Hall Buy My Car" width={200} height={90} />
         </Link>

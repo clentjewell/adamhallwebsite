@@ -31,11 +31,15 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+.pcta__action .btn {
+  padding: 15px 30px 16px; /* live: 195x57 */
+}
 .pcta__start {
   font-family: var(--font-body);
   font-weight: 500;
   color: var(--c-white);
-  font-size: var(--fs-body);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem); /* live: 36px */
+  line-height: 1.4;
 }
 .pcta__arrow {
   width: 54px;
