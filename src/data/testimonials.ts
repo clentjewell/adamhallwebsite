@@ -44,6 +44,7 @@ export const buyMyCarTestimonials: Testimonial[] = [
     name: 'Jen',
     location: 'Currumbin Waters',
   },
+  { quote: 'Adam made the entire process easy.', name: 'Rose', location: 'Currumbin Waters' },
 ];
 
 /* Featured single quotes used in green hero panels */

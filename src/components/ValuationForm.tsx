@@ -181,7 +181,15 @@ export default function ValuationForm() {
         </p>
       )}
 
-      <p className="vform__step" aria-live="polite">
+      {/* progress bar, as on the live wizard */}
+      <div className="vform__progress" aria-hidden="true">
+        <span className="vform__progress-label">{step === 0 ? '0%' : '50%'}</span>
+        <span className="vform__progress-track">
+          <span className="vform__progress-fill" style={{ width: step === 0 ? '0%' : '50%' }} />
+        </span>
+      </div>
+      <h3 className="vform__heading">{step === 0 ? 'Your car details' : 'Your contact details'}</h3>
+      <p className="visually-hidden" aria-live="polite">
         Step {step + 1} of 2
       </p>
 
@@ -205,7 +213,6 @@ export default function ValuationForm() {
           </button>
         )}
       </div>
-      <p className="vform__note">Obligation-free. No cost. No pressure.</p>
     </form>
   );
 }

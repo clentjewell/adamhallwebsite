@@ -1,11 +1,44 @@
 .vform {
   background: var(--c-white);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3.2vw, 3rem);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.3rem;
+}
+
+/* progress bar, as on the live Forminator wizard */
+.vform__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.vform__progress-label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-text);
+  min-width: 2.6em;
+}
+.vform__progress-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e3e3e3;
+  overflow: hidden;
+}
+.vform__progress-fill {
+  height: 100%;
+  background: var(--c-purple);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* step heading ("Your car details") */
+.vform__heading {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  color: var(--c-black);
+  margin: 0.2rem 0 0;
 }
 .vform__field {
   display: flex;
@@ -15,7 +48,7 @@
 .vform__field label {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--c-black);
 }
 .vform__req {
@@ -24,13 +57,14 @@
 .vform input,
 .vform select,
 .vform textarea {
+  /* live: white fields, thin grey border, generous height */
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--c-black);
-  padding: 0.8rem 1rem;
-  border: 1.5px solid var(--c-border);
-  border-radius: var(--radius-sm);
-  background: var(--c-cream);
+  padding: 0.9rem 1.1rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  background: var(--c-white);
   transition: border-color var(--transition), box-shadow var(--transition);
   width: 100%;
 }
@@ -89,20 +123,22 @@
   border-color: var(--c-green);
 }
 .vform__submit {
+  /* live: full-width lavender pill, white text */
   margin-top: 0.5rem;
-  background: var(--c-green);
+  background: var(--c-purple);
   color: var(--c-white);
   border: 0;
   border-radius: var(--radius-pill);
-  font-family: var(--font-accent);
+  font-family: var(--font-heading);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  font-size: 1.05rem;
-  padding: 1rem 1.5rem;
+  letter-spacing: 0.5px;
+  font-size: 1.25rem;
+  padding: 1.1rem 1.5rem;
+  width: 100%;
   transition: background var(--transition), transform var(--transition);
 }
 .vform__submit:hover:not(:disabled) {
-  background: var(--c-green-deep);
+  background: var(--c-purple-dark);
   transform: translateY(-2px);
 }
 .vform__submit:disabled {
