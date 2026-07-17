@@ -60,7 +60,7 @@ export default function About() {
       />
 
       {/* Bio */}
-      <section className="section bg-cream" style={{ paddingTop: 0 }}>
+      <section className="section bg-cream about-bio-sec">
         <div className="container container--narrow about-bio reveal">
           <h3 className="wavy about-bio__title">Bio</h3>
           <p>Adam has been a Gold Coast local for over 40 years and has spent his entire career in the automotive industry.</p>
