@@ -13,6 +13,34 @@ export interface Episode {
 
 export const episodes: Episode[] = [
   {
+    "id": "d43fbba0-bbbf-4609-b6a1-b4870068d1e3",
+    "title": "What's Your Car Worth - July 14th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/d43fbba0-bbbf-4609-b6a1-b4870068d1e3/audio.mp3",
+    "cover": "/assets/covers/omny-d43fbba0-bbbf-4609-b6a1-b4870068d1e3.jpg"
+  },
+  {
+    "id": "15924568-215f-451d-88fb-b482000a29ac",
+    "title": "What's Your Car Worth - July 7th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/15924568-215f-451d-88fb-b482000a29ac/audio.mp3",
+    "cover": "/assets/covers/omny-15924568-215f-451d-88fb-b482000a29ac.jpg"
+  },
+  {
+    "id": "cc2044ee-59b6-4c86-abdb-b47a00088c00",
+    "title": "What's Your Car Worth - June 30th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/cc2044ee-59b6-4c86-abdb-b47a00088c00/audio.mp3",
+    "cover": "/assets/covers/omny-cc2044ee-59b6-4c86-abdb-b47a00088c00.jpg"
+  },
+  {
+    "id": "daa8bb2a-ef11-43cd-9fcf-b47400064da4",
+    "title": "What's Your Car Worth - June 23rd",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/daa8bb2a-ef11-43cd-9fcf-b47400064da4/audio.mp3",
+    "cover": "/assets/covers/omny-daa8bb2a-ef11-43cd-9fcf-b47400064da4.jpg"
+  },
+  {
     "id": "62ea2ece-1d08-47a2-bc91-b46c00022033",
     "title": "What's Your Car Worth - June 16th",
     "subtitle": "What's Your Car Worth",
