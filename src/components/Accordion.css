@@ -5,15 +5,6 @@
 }
 .accordion__item {
   border-bottom: 1px solid var(--c-border);
-  transition: box-shadow var(--transition), background-color var(--transition);
-}
-.accordion__item.is-open {
-  background: var(--c-white);
-  border-radius: 8px;
-  border-bottom-color: transparent;
-  box-shadow: var(--shadow);
-  padding-inline: 1.4rem;
-  margin-inline: -1.4rem;
 }
 .accordion__q {
   margin: 0;

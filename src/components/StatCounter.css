@@ -19,25 +19,26 @@
   gap: 1rem;
 }
 .stat__icon {
-  color: var(--c-purple);
+  color: var(--c-white);
+  opacity: 0.9;
   flex-shrink: 0;
 }
 .stat__icon svg {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
 }
 .stat__number {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: 600;
-  font-size: clamp(2rem, 3.4vw, 3rem); /* live: 48px mr-eaves */
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
   line-height: 1;
   color: var(--c-white);
   margin-bottom: 0.5rem;
 }
 .stat__title {
   font-family: var(--font-body);
-  font-size: 1.1875rem; /* live: 19px */
-  color: var(--c-purple);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 14rem;
 }
 

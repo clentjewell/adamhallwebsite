@@ -57,7 +57,7 @@ export default function HowItWorks() {
       />
 
       {/* Friendly, convenient and fast */}
-      <section className="section bg-white hiw-lead">
+      <section className="section bg-white hiw-lead" style={{ paddingTop: 0 }}>
         <div className="container container--narrow reveal">
           <h2 className="hiw-lead__title">
             Friendly, <span className="wavy">convenient</span> and fast
@@ -70,7 +70,7 @@ export default function HowItWorks() {
       </section>
 
       {/* How it works steps — accordion left, photo right */}
-      <section className="section bg-white">
+      <section className="section bg-cream">
         <div className="container container--wide hiw-steps">
           <div className="hiw-steps__content reveal-left">
             <h3 className="hiw-steps__title">
@@ -97,7 +97,7 @@ export default function HowItWorks() {
       </section>
 
       {/* Mid-page CTA line */}
-      <section className="bg-white hiw-band">
+      <section className="bg-cream hiw-band">
         <div className="container container--narrow reveal">
           <h4 className="hiw-band__title">
             Time&rsquo;s precious and <span className="hiw-band__pill">life&rsquo;s busy</span>
@@ -112,29 +112,24 @@ export default function HowItWorks() {
       </section>
 
       {/* Happy customers */}
-      <section className="section bg-cream">
+      <section className="section bg-white">
         <div className="container container--narrow">
           <h3 className="hiw-heading reveal">Happy Customers</h3>
-          <TestimonialList items={namedTestimonials} center />
+          <TestimonialList items={namedTestimonials} />
         </div>
       </section>
 
       {/* Does the thought sound exhausting */}
-      <section className="section bg-white hiw-exhaust-wrap">
+      <section className="section bg-white hiw-exhaust-wrap" style={{ paddingTop: 0 }}>
         <div className="container container--wide hiw-exhaust">
           <div className="hiw-exhaust__media reveal-left">
             <img
-              src="/assets/images/Adam-Hall-Car-Buying-Northern-Rivers.jpg"
-              alt="Adam Hall shaking hands with a customer in the Northern Rivers"
-              loading="lazy"
-              width={560}
-              height={460}
-            />
-            <img
-              className="hiw-exhaust__overlay"
               src="/assets/decor/thankyou-welcome.svg"
               alt=""
               aria-hidden="true"
+              loading="lazy"
+              width={480}
+              height={300}
             />
           </div>
           <div className="hiw-exhaust__content reveal-right">
@@ -154,34 +149,21 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Adam's promise: list left, photo right (as on live) */}
+        {/* Adam's promise cards */}
         <div className="container container--wide hiw-promise">
-          <div className="hiw-promise__list reveal-left">
-            {promiseCards.map((c) => (
-              <div className="hiw-promise__card" key={c.title}>
-                <h5>{c.title}</h5>
-                <p>{c.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="hiw-promise__media reveal-right">
-            <img
-              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-4.jpg"
-              alt="Adam Hall reviewing paperwork with a customer at their table"
-              loading="lazy"
-              width={560}
-              height={460}
-            />
-          </div>
+          {promiseCards.map((c) => (
+            <div className="hiw-promise__card reveal" key={c.title}>
+              <h5>{c.title}</h5>
+              <p>{c.body}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <div className="bg-white">
-        <TrustBar />
-        <WaveDivider color="green" from="white" />
-      </div>
+      <TrustBar />
+
+      <WaveDivider color="green" />
       <FeaturedTestimonial
-        contained
         photo="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-2.jpg"
         photoAlt="A happy couple at home on their balcony"
         quote={heroQuote.howItWorks.quote}
