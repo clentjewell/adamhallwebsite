@@ -4,7 +4,7 @@
 }
 .hiw-lead {
   text-align: center;
-  padding-top: 0;
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
 }
 .hiw-lead__title {
   font-size: var(--fs-h3);
@@ -47,7 +47,6 @@
 
 /* Mid-page CTA band */
 .hiw-band {
-  background: var(--c-white);
   padding-block: clamp(2.5rem, 5vw, 4.5rem);
   text-align: center;
 }
@@ -107,9 +106,9 @@
 }
 .hiw-exhaust__overlay {
   position: absolute;
-  left: -6%;
-  bottom: 10%;
-  width: 78%;
+  left: 6%;
+  bottom: 8%;
+  width: 62%;
   pointer-events: none;
 }
 

@@ -57,7 +57,7 @@ export default function HowItWorks() {
       />
 
       {/* Friendly, convenient and fast */}
-      <section className="section bg-white hiw-lead" style={{ paddingTop: 0 }}>
+      <section className="section bg-white hiw-lead">
         <div className="container container--narrow reveal">
           <h2 className="hiw-lead__title">
             Friendly, <span className="wavy">convenient</span> and fast
@@ -97,7 +97,7 @@ export default function HowItWorks() {
       </section>
 
       {/* Mid-page CTA line */}
-      <section className="bg-cream hiw-band">
+      <section className="bg-white hiw-band">
         <div className="container container--narrow reveal">
           <h4 className="hiw-band__title">
             Time&rsquo;s precious and <span className="hiw-band__pill">life&rsquo;s busy</span>
@@ -120,7 +120,7 @@ export default function HowItWorks() {
       </section>
 
       {/* Does the thought sound exhausting */}
-      <section className="section bg-white hiw-exhaust-wrap" style={{ paddingTop: 0 }}>
+      <section className="section bg-white hiw-exhaust-wrap">
         <div className="container container--wide hiw-exhaust">
           <div className="hiw-exhaust__media reveal-left">
             <img
@@ -176,9 +176,10 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <TrustBar />
-
-      <WaveDivider color="green" />
+      <div className="bg-white">
+        <TrustBar />
+        <WaveDivider color="green" from="white" />
+      </div>
       <FeaturedTestimonial
         contained
         photo="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-2.jpg"

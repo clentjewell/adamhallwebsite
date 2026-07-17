@@ -11,6 +11,12 @@
 .wave-divider--green {
   color: var(--c-green);
 }
+.wave-divider--from-white {
+  background: var(--c-white);
+}
+.wave-divider--from-cream {
+  background: var(--c-cream);
+}
 .wave-divider--cream {
   color: var(--c-cream);
 }
