@@ -1,0 +1,35 @@
+.listen {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.listen__title {
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  position: sticky;
+  top: 2rem;
+}
+.listen__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.listen__more {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.listen__count {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--c-black);
+}
+
+@media (max-width: 900px) {
+  .listen {
+    grid-template-columns: 1fr;
+  }
+  .listen__title {
+    position: static;
+  }
+}

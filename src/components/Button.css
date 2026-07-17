@@ -1,0 +1,102 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  /* live site: 20px neue-haas-grotesk-display 600, 0.5px tracking, 14x30 padding */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  padding: 14px 30px;
+  border: 0;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition),
+    color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--purple {
+  background: var(--c-purple);
+  color: var(--c-white);
+}
+.btn--purple:hover {
+  background: var(--c-purple-dark);
+}
+
+/* Header phone pill: speech-bubble corner + tighter padding, as on the live site */
+.btn--bubble {
+  border-radius: 22px 22px 22px 0;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+}
+
+.btn--green {
+  background: var(--c-green);
+  color: var(--c-white);
+}
+.btn--green:hover {
+  background: var(--c-green-deep);
+}
+
+.btn--white {
+  background: var(--c-white);
+  color: var(--c-green);
+}
+.btn--white:hover {
+  background: var(--c-cream);
+}
+
+.btn--black {
+  background: var(--c-black);
+  color: var(--c-white);
+}
+.btn--black:hover {
+  background: var(--c-dark);
+}
+
+.btn--tan {
+  background: var(--c-tan);
+  color: var(--c-black);
+}
+.btn--tan:hover {
+  background: #eccf9e;
+}
+
+.btn__arrow {
+  font-family: var(--font-body);
+  line-height: 1;
+  transition: transform var(--transition);
+}
+.btn:hover .btn__arrow {
+  transform: translateX(3px);
+}
+
+.btn--outline-green {
+  background: transparent;
+  color: var(--c-green);
+  border: 2px solid var(--c-green);
+  padding: 12px 28px;
+}
+.btn--outline-green:hover {
+  background: var(--c-green);
+  color: var(--c-white);
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: var(--c-white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 28px;
+}
+.btn--outline-white:hover {
+  background: var(--c-white);
+  color: var(--c-green);
+  border-color: var(--c-white);
+}

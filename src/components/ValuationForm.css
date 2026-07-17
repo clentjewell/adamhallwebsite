@@ -1,0 +1,158 @@
+.vform {
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.vform__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.vform__field label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--c-black);
+}
+.vform__req {
+  color: var(--c-purple-dark);
+}
+.vform input,
+.vform select,
+.vform textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-black);
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-cream);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+.vform input::placeholder,
+.vform textarea::placeholder {
+  color: #a9a9a9;
+}
+.vform input:focus,
+.vform select:focus,
+.vform textarea:focus {
+  outline: none;
+  border-color: var(--c-green);
+  box-shadow: 0 0 0 3px rgba(0, 68, 56, 0.12);
+}
+.vform textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+.vform__field.has-error input,
+.vform__field.has-error select,
+.vform__field.has-error textarea {
+  border-color: #d64545;
+  background: #fdf3f3;
+}
+.vform__error {
+  color: #d64545;
+  font-size: 0.82rem;
+}
+.vform__step {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text);
+  margin: 0;
+}
+.vform__nav {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+.vform__nav .vform__submit {
+  flex: 1;
+  margin-top: 0;
+}
+.vform__back {
+  background: transparent;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  padding: 0.9rem 1.4rem;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  color: var(--c-black);
+  transition: border-color var(--transition);
+}
+.vform__back:hover {
+  border-color: var(--c-green);
+}
+.vform__submit {
+  margin-top: 0.5rem;
+  background: var(--c-green);
+  color: var(--c-white);
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  padding: 1rem 1.5rem;
+  transition: background var(--transition), transform var(--transition);
+}
+.vform__submit:hover:not(:disabled) {
+  background: var(--c-green-deep);
+  transform: translateY(-2px);
+}
+.vform__submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+.vform__note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--c-black);
+  margin: 0;
+}
+.vform__alert {
+  background: #fdf3f3;
+  color: #a12626;
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Success state */
+.vform--done {
+  text-align: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+.vform__check {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--c-purple);
+  color: var(--c-green);
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.vform--done h3 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.vform--done p {
+  color: var(--c-black);
+  max-width: 26rem;
+}
+.vform--done a {
+  color: var(--c-green);
+  font-weight: 600;
+  text-decoration: underline;
+}

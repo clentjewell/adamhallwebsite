@@ -1,0 +1,242 @@
+/* --- Hero: full-bleed photo left, content right --- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 39%) 1fr;
+  min-height: 900px; /* live hero: photo column ~900px tall at 1440 */
+}
+.hero__media {
+  position: relative;
+}
+.hero__media > img:not(.hero__signature) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__signature {
+  position: absolute;
+  left: 70px;
+  bottom: 1.75rem;
+  width: 130px; /* live: 130x61 */
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* top padding clears the absolutely-positioned header; live text box is ~716px wide */
+  padding: calc(var(--header-h) + 2rem) clamp(1.25rem, 5vw, 4.7rem) clamp(2.5rem, 5vw, 4.5rem)
+    clamp(1.25rem, 6vw, 5.4rem);
+  max-width: none;
+}
+.hero__title {
+  font-size: var(--fs-hero);
+  color: var(--c-white);
+  line-height: 1.12;
+  margin-bottom: 0.9rem;
+}
+.hero__subtitle {
+  /* live: 28px mr-eaves-modern */
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.3;
+  color: var(--c-white);
+  margin-bottom: 1.6rem;
+  max-width: 42rem;
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.hero__featured {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.hero__featured > span {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.hero__featured img {
+  height: 46px;
+  width: auto;
+}
+
+/* --- Intro --- */
+.home-intro {
+  text-align: center;
+}
+.home-intro__title {
+  /* live: 40px w600, black */
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1.3;
+  color: var(--c-black);
+  margin-bottom: 1.2rem;
+}
+.home-intro__text {
+  font-size: var(--fs-body);
+  color: var(--c-black);
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+/* --- Split content/media sections --- */
+.home-split {
+  /* live: content 458px | gap ~104px | photo 738px (598px col + 140px bleed) */
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 51.5%);
+  align-items: center;
+  gap: clamp(2.5rem, 7.2vw, 6.5rem);
+}
+.home-split--media-left {
+  /* live: photo 652px (512px col + 140px bleed) | content */
+  grid-template-columns: minmax(0, 44%) 1fr;
+}
+.home-split__title {
+  font-size: var(--fs-h3);
+  margin-bottom: 1.2rem;
+  color: var(--c-black);
+}
+.home-split__content > p {
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+  color: var(--c-black);
+}
+.home-split__media {
+  position: relative;
+}
+.home-split__media > img:first-child {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  aspect-ratio: 738 / 650; /* live value-section photo */
+}
+.home-split--media-left .home-split__media > img:first-child {
+  aspect-ratio: 652 / 650; /* live buy-section photo (~square) */
+}
+
+/* Full-bleed: photos run to the viewport edge on their side, as on the live site */
+@media (min-width: 1161px) {
+  .home-split:not(.home-split--media-left) .home-split__media {
+    margin-right: calc((1160px - 100vw) / 2);
+  }
+  .home-split:not(.home-split--media-left) .home-split__media > img:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .home-split--media-left .home-split__media {
+    margin-left: calc((1160px - 100vw) / 2);
+  }
+  .home-split--media-left .home-split__media > img:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.home-split__bubbles {
+  /* live: 470x196 centred on the 738px photo, ~130px above its bottom */
+  position: absolute;
+  left: 18%;
+  bottom: 20%;
+  width: 64%;
+  pointer-events: none;
+}
+.home-split--media-left .home-split__media {
+  order: 0;
+}
+.home-split--media-left .home-split__content {
+  order: 1;
+}
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+/* Buy-section photo collage: main photo + smaller family photo + rotating badge,
+   matching the live composition */
+.home-buy {
+  position: relative;
+}
+.home-split__media--collage {
+  padding-bottom: 110px; /* room for the collage photo + badge hanging below */
+}
+.home-split__collage {
+  /* live: 322x215 at 58% across the photo, hanging ~105px below its bottom */
+  position: absolute;
+  left: 58%;
+  bottom: 5px;
+  width: 49%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+.home-split__media .home-badge {
+  /* live: 213px badge at ~29% across, straddling the photo's bottom edge */
+  position: absolute;
+  left: 29%;
+  bottom: -10px;
+  width: 213px !important;
+  height: 213px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 0;
+  animation: badge-spin 24s linear infinite;
+  z-index: 2;
+}
+@keyframes badge-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-badge {
+    animation: none;
+  }
+}
+
+/* --- Voice section --- */
+.home-voice__logo {
+  height: 56px;
+  width: auto;
+  margin: 0 auto 3rem;
+  filter: brightness(0) saturate(100%);
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero__media {
+    margin-top: 0;
+    max-height: 420px;
+    overflow: hidden;
+  }
+  .hero__content {
+    padding-block: 2.5rem 3rem;
+  }
+}
+@media (max-width: 900px) {
+  .home-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .home-split__media {
+    order: -1;
+  }
+  .home-split--media-left .home-split__content {
+    order: 0;
+  }
+  .home-badge {
+    display: none;
+  }
+}

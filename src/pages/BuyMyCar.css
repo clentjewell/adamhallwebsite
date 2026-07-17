@@ -1,0 +1,115 @@
+.bmc {
+  min-height: 100vh;
+  background: var(--c-cream);
+  display: flex;
+  flex-direction: column;
+}
+.bmc__top {
+  /* live: full-width header, logo at x=47, featured group ending 40px from right */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px 0 47px;
+  gap: 1rem;
+}
+.bmc__logo img {
+  width: 220px;
+  height: auto;
+}
+.bmc__featured {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.bmc__featured span {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  color: var(--c-black);
+}
+.bmc__featured img {
+  height: 42px;
+  width: auto;
+  /* white PNG rendered dark on the cream page */
+  filter: brightness(0) saturate(100%);
+}
+
+.bmc__body {
+  /* live: content 540px | gap 100px | form 560px inside the 1200px container */
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 560px);
+  gap: clamp(2rem, 7vw, 100px);
+  align-items: start;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+.bmc__title {
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  color: var(--c-black);
+  margin-bottom: 1.2rem;
+}
+.bmc__lead {
+  font-size: var(--fs-body);
+  color: var(--c-black);
+  margin-bottom: 1.8rem;
+  max-width: 32rem;
+}
+.bmc__rule {
+  border: 0;
+  border-top: 1px solid var(--c-border);
+  margin: 2rem 0;
+  max-width: 30rem;
+}
+.bmc__phone {
+  margin-top: 1.6rem;
+  color: var(--c-black);
+}
+.bmc__phone a {
+  color: var(--c-green);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.bmc__form {
+  position: sticky;
+  top: 2rem;
+}
+
+.bmc__foot {
+  /* live: single centred line, 16px grey */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  justify-content: center;
+  padding-block: 2rem;
+  font-size: 1rem;
+  color: var(--c-text);
+}
+.bmc__foot p {
+  margin: 0;
+  white-space: nowrap;
+}
+.bmc__foot a:hover {
+  color: var(--c-green);
+}
+
+@media (max-width: 900px) {
+  .bmc__body {
+    grid-template-columns: 1fr;
+  }
+  .bmc__form {
+    position: static;
+    order: -1;
+  }
+  .bmc__title {
+    text-align: left;
+  }
+}
+@media (max-width: 520px) {
+  .bmc__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,19 @@
+.wave-divider {
+  line-height: 0;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: clamp(40px, 6vw, 88px);
+}
+.wave-divider--green {
+  color: var(--c-green);
+}
+.wave-divider--cream {
+  color: var(--c-cream);
+}
+.wave-divider.is-flip svg {
+  transform: scaleY(-1);
+}

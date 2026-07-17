@@ -1,0 +1,166 @@
+/* Transparent header overlaying the page's green hero (non-sticky, as on the
+   live site): the Home hero photo reaches the very top of the page and the
+   black bubble logo sits on top of it. */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 30px;
+  min-height: var(--header-h);
+  /* live header spans the full viewport with 40px side padding, not a container */
+  max-width: none;
+  padding-inline: 40px;
+}
+
+.site-header__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+}
+.site-header__logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* Right side: nav items and phone pill on one row */
+.site-header__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 22px;
+}
+.site-header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+}
+.site-header__nav a {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.125rem; /* 18px, as on the live site */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-white);
+  position: relative;
+  padding-block: 0.3rem;
+}
+.site-header__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--c-purple);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.site-header__nav a:hover::after,
+.site-header__nav a.is-active::after {
+  transform: scaleX(1);
+}
+.site-header__nav a:hover {
+  color: var(--c-purple);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  background: transparent;
+  border: 0;
+}
+.burger span {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  background: var(--c-white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.burger.is-open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.is-open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-h-mobile) 0 0 0;
+  background: var(--c-green);
+  padding: 2rem var(--gutter) 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  overflow-y: auto;
+  z-index: 99;
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.mobile-menu a {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-white);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.mobile-menu a:hover {
+  color: var(--c-purple);
+}
+.mobile-menu__call {
+  align-self: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .site-header__right {
+    display: none;
+  }
+  .site-header__inner {
+    min-height: var(--header-h-mobile);
+    align-items: center;
+    padding-top: 12px;
+  }
+  .site-header__logo img {
+    width: 140px;
+  }
+  .burger {
+    display: flex;
+    margin-left: auto;
+  }
+}

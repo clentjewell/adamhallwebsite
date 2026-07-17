@@ -1,0 +1,28 @@
+.privacy-hero {
+  padding-block: calc(var(--header-h-mobile) + 1.5rem) clamp(2.5rem, 6vw, 4.5rem);
+}
+@media (min-width: 1025px) {
+  .privacy-hero {
+    padding-top: calc(var(--header-h) + 1.5rem);
+  }
+}
+.privacy-hero h1 {
+  font-size: var(--fs-hero);
+  color: var(--c-white);
+  margin: 0;
+}
+.privacy-body h2 {
+  font-size: 1.5rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--c-black);
+}
+.privacy-body h2:first-child {
+  margin-top: 0;
+}
+.privacy-body p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--c-black);
+  margin-bottom: 1.1rem;
+}
