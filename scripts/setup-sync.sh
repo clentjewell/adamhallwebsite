@@ -5,5 +5,6 @@ set -e
 echo "› Installing faster-whisper…"
 pip3 install --quiet faster-whisper
 echo "✔ faster-whisper ready."
-echo "  (the Whisper model downloads from huggingface.co on first transcription;"
-echo "   ensure huggingface.co is on the network allow-list.)"
+echo "  (the Whisper 'base' model (~145 MB) downloads from huggingface.co on first"
+echo "   transcription and is then cached in ~/.cache/huggingface. Episode data comes"
+echo "   from api.omny.fm — see scripts/README-automation.md.)"

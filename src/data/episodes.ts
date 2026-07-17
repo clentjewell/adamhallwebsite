@@ -13,6 +13,34 @@ export interface Episode {
 
 export const episodes: Episode[] = [
   {
+    "id": "9802343f-4ef0-4340-a44b-b4080184f02f",
+    "title": "What's Your Car Worth - March 3rd",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/9802343f-4ef0-4340-a44b-b4080184f02f/audio.mp3",
+    "cover": "/assets/covers/omny-9802343f-4ef0-4340-a44b-b4080184f02f.jpg"
+  },
+  {
+    "id": "fa3aab85-5ad5-4a63-8c36-b3f4004628a5",
+    "title": "What's Your Car Worth - Feb 17th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/fa3aab85-5ad5-4a63-8c36-b3f4004628a5/audio.mp3",
+    "cover": "/assets/covers/omny-fa3aab85-5ad5-4a63-8c36-b3f4004628a5.jpg"
+  },
+  {
+    "id": "9f1cde34-935f-4ac2-b80c-b3ee002a6cff",
+    "title": "What's Your Car Worth - Feb 10th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/9f1cde34-935f-4ac2-b80c-b3ee002a6cff/audio.mp3",
+    "cover": "/assets/covers/omny-9f1cde34-935f-4ac2-b80c-b3ee002a6cff.jpg"
+  },
+  {
+    "id": "a79babd8-f033-492d-a179-b3e70058d865",
+    "title": "What's your Car Worth - Feb 3rd",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/a79babd8-f033-492d-a179-b3e70058d865/audio.mp3",
+    "cover": "/assets/covers/omny-a79babd8-f033-492d-a179-b3e70058d865.jpg"
+  },
+  {
     "id": "3156",
     "title": "What's Your Car Worth - January 27th 2026",
     "subtitle": "What's Your Car Worth",
