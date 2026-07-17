@@ -47,6 +47,7 @@
 
 /* Mid-page CTA band */
 .hiw-band {
+  background: var(--c-white);
   padding-block: clamp(2.5rem, 5vw, 4.5rem);
   text-align: center;
 }
@@ -94,17 +95,41 @@
 .hiw-exhaust__actions {
   margin-top: 1.8rem;
 }
-.hiw-exhaust__media img {
-  width: 88%;
-  margin-inline: auto;
+.hiw-exhaust__media {
+  position: relative;
+}
+.hiw-exhaust__media > img:first-child {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  aspect-ratio: 5 / 4;
+}
+.hiw-exhaust__overlay {
+  position: absolute;
+  left: -6%;
+  bottom: 10%;
+  width: 78%;
+  pointer-events: none;
 }
 
 /* Adam's promise cards */
 .hiw-promise {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 4rem;
+  grid-template-columns: 1fr minmax(0, 48%);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
   margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.hiw-promise__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.hiw-promise__media img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  aspect-ratio: 5 / 4;
 }
 .hiw-promise__card h5 {
   font-size: 1.3rem;
@@ -137,6 +162,9 @@
   }
   .hiw-promise {
     grid-template-columns: 1fr;
-    gap: 1.8rem;
+    gap: 2rem;
+  }
+  .hiw-promise__media {
+    order: -1;
   }
 }

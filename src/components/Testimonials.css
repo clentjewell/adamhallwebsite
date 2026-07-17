@@ -66,6 +66,12 @@
   gap: 0.8rem;
   flex-wrap: wrap;
 }
+.tlist--center .tlist__item {
+  text-align: center;
+}
+.tlist--center .tlist__meta {
+  justify-content: center;
+}
 .tlist__name {
   font-family: var(--font-accent);
   font-weight: 600;

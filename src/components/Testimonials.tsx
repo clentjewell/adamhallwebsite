@@ -32,9 +32,9 @@ export function TestimonialGrid({
 }
 
 /* --- Named testimonial list (with attribution) --- */
-export function TestimonialList({ items }: { items: Testimonial[] }) {
+export function TestimonialList({ items, center = false }: { items: Testimonial[]; center?: boolean }) {
   return (
-    <ul className="tlist">
+    <ul className={`tlist ${center ? 'tlist--center' : ''}`}>
       {items.map((t, i) => (
         <li key={i} className="tlist__item reveal">
           <div className="tlist__meta">

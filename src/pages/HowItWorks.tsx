@@ -115,7 +115,7 @@ export default function HowItWorks() {
       <section className="section bg-white">
         <div className="container container--narrow">
           <h3 className="hiw-heading reveal">Happy Customers</h3>
-          <TestimonialList items={namedTestimonials} />
+          <TestimonialList items={namedTestimonials} center />
         </div>
       </section>
 
@@ -124,12 +124,17 @@ export default function HowItWorks() {
         <div className="container container--wide hiw-exhaust">
           <div className="hiw-exhaust__media reveal-left">
             <img
+              src="/assets/images/Adam-Hall-Car-Buying-Northern-Rivers.jpg"
+              alt="Adam Hall shaking hands with a customer in the Northern Rivers"
+              loading="lazy"
+              width={560}
+              height={460}
+            />
+            <img
+              className="hiw-exhaust__overlay"
               src="/assets/decor/thankyou-welcome.svg"
               alt=""
               aria-hidden="true"
-              loading="lazy"
-              width={480}
-              height={300}
             />
           </div>
           <div className="hiw-exhaust__content reveal-right">
@@ -149,14 +154,25 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Adam's promise cards */}
+        {/* Adam's promise: list left, photo right (as on live) */}
         <div className="container container--wide hiw-promise">
-          {promiseCards.map((c) => (
-            <div className="hiw-promise__card reveal" key={c.title}>
-              <h5>{c.title}</h5>
-              <p>{c.body}</p>
-            </div>
-          ))}
+          <div className="hiw-promise__list reveal-left">
+            {promiseCards.map((c) => (
+              <div className="hiw-promise__card" key={c.title}>
+                <h5>{c.title}</h5>
+                <p>{c.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="hiw-promise__media reveal-right">
+            <img
+              src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-4.jpg"
+              alt="Adam Hall reviewing paperwork with a customer at their table"
+              loading="lazy"
+              width={560}
+              height={460}
+            />
+          </div>
         </div>
       </section>
 

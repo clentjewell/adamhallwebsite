@@ -33,6 +33,12 @@ export const namedTestimonials: Testimonial[] = [
   { quote: 'The money was in my account the same day', name: 'Bob', location: 'Surfers Paradise' },
   { quote: 'I cannot recommend Adam highly enough!', name: 'Jack', location: 'Clear Island Waters' },
   { quote: 'Thankyou, thankyou, thankyou Adam', name: 'Despina', location: 'Coomera' },
+  {
+    quote:
+      'I was so surprised when I called that I spoke with Adam himself. He come out and took care of everything.',
+    name: 'Rodney',
+    location: 'Mudgeeraba',
+  },
 ];
 
 /* Buy My Car page testimonials */
