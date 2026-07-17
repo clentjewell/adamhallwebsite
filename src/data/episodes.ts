@@ -13,6 +13,41 @@ export interface Episode {
 
 export const episodes: Episode[] = [
   {
+    "id": "62ea2ece-1d08-47a2-bc91-b46c00022033",
+    "title": "What's Your Car Worth - June 16th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/62ea2ece-1d08-47a2-bc91-b46c00022033/audio.mp3",
+    "cover": "/assets/covers/omny-62ea2ece-1d08-47a2-bc91-b46c00022033.jpg"
+  },
+  {
+    "id": "da10d7e3-b709-4f77-871d-b45e006a805b",
+    "title": "What's Your Car Worth - June 2nd",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/da10d7e3-b709-4f77-871d-b45e006a805b/audio.mp3",
+    "cover": "/assets/covers/omny-da10d7e3-b709-4f77-871d-b45e006a805b.jpg"
+  },
+  {
+    "id": "1cd0a726-9ab2-4044-b61f-b4570184aede",
+    "title": "What's Your Car Worth - May 26th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/1cd0a726-9ab2-4044-b61f-b4570184aede/audio.mp3",
+    "cover": "/assets/covers/omny-1cd0a726-9ab2-4044-b61f-b4570184aede.jpg"
+  },
+  {
+    "id": "0bcbe908-4694-4660-926d-b44f002671eb",
+    "title": "Whats Your Car Worth - May 19th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/0bcbe908-4694-4660-926d-b44f002671eb/audio.mp3",
+    "cover": "/assets/covers/omny-0bcbe908-4694-4660-926d-b44f002671eb.jpg"
+  },
+  {
+    "id": "b1731e3c-724b-42be-8772-b449005cf076",
+    "title": "What's Your Car Worth - May 12th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/b1731e3c-724b-42be-8772-b449005cf076/audio.mp3",
+    "cover": "/assets/covers/omny-b1731e3c-724b-42be-8772-b449005cf076.jpg"
+  },
+  {
     "id": "83f89e76-f190-47b5-b237-b441004f653e",
     "title": "What's Your Car Worth - May 5th",
     "subtitle": "What's Your Car Worth",
