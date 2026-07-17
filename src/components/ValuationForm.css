@@ -198,3 +198,17 @@
   font-weight: 600;
   text-decoration: underline;
 }
+
+/* Bare variant (Contact page): fields sit directly on the green hero, no card */
+.vform--bare {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+.vform--bare .vform__field label {
+  color: var(--c-white);
+}
+.vform--bare .vform__count {
+  color: rgba(255, 255, 255, 0.75);
+}

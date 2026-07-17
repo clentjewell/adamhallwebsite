@@ -55,7 +55,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="vform" onSubmit={onSubmit} noValidate aria-label="Contact Adam">
+    <form className="vform vform--bare" onSubmit={onSubmit} noValidate aria-label="Contact Adam">
       {status === 'error' && (
         <p className="vform__alert" role="alert">
           Sorry, something went wrong sending your message. Please call Adam on{' '}

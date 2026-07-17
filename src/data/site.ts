@@ -11,7 +11,7 @@ export const site = {
   tagline:
     'The easiest, fastest and safest way to sell your car in the Gold Coast, Brisbane and Northern Rivers',
   serviceAreas: 'Gold Coast, Brisbane & Northern Rivers',
-  linkedin: 'https://www.linkedin.com/',
+  linkedin: 'https://www.linkedin.com/in/adam-hall-a3082959/',
   copyright: `© ${new Date().getFullYear()} adamhallbuymycar.com.au. All Rights Reserved.`,
 };
 
