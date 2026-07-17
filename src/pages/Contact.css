@@ -20,8 +20,8 @@
 .contact-hero__subtitle {
   color: var(--c-white);
   font-size: clamp(1.3rem, 2vw, 1.75rem);
-  line-height: 1.55;
-  max-width: 26rem;
+  line-height: 1.4;
+  max-width: 34rem;
   margin-bottom: 2.2rem;
 }
 .contact-hero__phone {

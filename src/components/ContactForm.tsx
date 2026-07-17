@@ -112,10 +112,14 @@ export default function ContactForm() {
           id="cf-message"
           name="message"
           rows={5}
+          maxLength={180}
           placeholder="Enter your message..."
           value={values.message}
           onChange={(e) => set('message', e.target.value)}
         />
+        <span className="vform__count" aria-hidden="true">
+          {values.message.length} / 180
+        </span>
       </div>
       <button className="vform__submit" type="submit" disabled={status === 'submitting'}>
         {status === 'submitting' ? 'Sending…' : 'Send Message'}
