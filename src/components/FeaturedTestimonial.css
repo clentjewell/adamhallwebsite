@@ -43,6 +43,15 @@
   max-width: 46rem;
 }
 
+/* contained variant (How It Works): live photo 480x600 at x=120, quote at x=690 */
+.ftest__inner--contained {
+  max-width: 1240px;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 40%) 1fr;
+  gap: clamp(2rem, 6.2vw, 90px);
+  padding-inline: 20px;
+}
+
 @media (max-width: 900px) {
   .ftest__inner {
     grid-template-columns: 1fr;

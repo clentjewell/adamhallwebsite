@@ -84,8 +84,8 @@
   justify-content: center;
 }
 .ghero__bridge img {
-  width: min(880px, 100%);
-  aspect-ratio: 8 / 5;
+  width: min(980px, 100%);
+  aspect-ratio: 980 / 652; /* live bridge photo */
   object-fit: cover;
   display: block;
   margin-top: calc(-1 * var(--bridge-overlap));

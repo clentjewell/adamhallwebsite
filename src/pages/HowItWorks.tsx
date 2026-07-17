@@ -70,7 +70,7 @@ export default function HowItWorks() {
       </section>
 
       {/* How it works steps — accordion left, photo right */}
-      <section className="section bg-cream">
+      <section className="section bg-white">
         <div className="container container--wide hiw-steps">
           <div className="hiw-steps__content reveal-left">
             <h3 className="hiw-steps__title">
@@ -112,7 +112,7 @@ export default function HowItWorks() {
       </section>
 
       {/* Happy customers */}
-      <section className="section bg-white">
+      <section className="section bg-cream">
         <div className="container container--narrow">
           <h3 className="hiw-heading reveal">Happy Customers</h3>
           <TestimonialList items={namedTestimonials} center />
@@ -180,6 +180,7 @@ export default function HowItWorks() {
 
       <WaveDivider color="green" />
       <FeaturedTestimonial
+        contained
         photo="/assets/images/Adam-Hall-Car-Buying-Gold-Coast-2.jpg"
         photoAlt="A happy couple at home on their balcony"
         quote={heroQuote.howItWorks.quote}
