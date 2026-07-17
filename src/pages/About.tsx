@@ -100,10 +100,25 @@ export default function About() {
         </div>
       </section>
 
-      {/* Simplify cards */}
-      <section className="section bg-cream" style={{ paddingTop: 0 }}>
+      {/* Simplify: heading + photo row, then numbered cards */}
+      <section className="section bg-cream about-simplify" style={{ paddingTop: 0 }}>
+        <div className="about-simplify__top">
+          <div className="container container--wide about-simplify__row">
+            <h4 className="about-simplify__title reveal-left">
+              Let Adam simplify the car sales process for you.
+            </h4>
+            <div className="about-simplify__media reveal-right">
+              <img
+                src="/assets/images/Adam-Hall-Value-My-Car-2.jpg"
+                alt="Adam Hall with a family and their car at home"
+                loading="lazy"
+                width={850}
+                height={565}
+              />
+            </div>
+          </div>
+        </div>
         <div className="container container--wide">
-          <h4 className="about-simplify__title reveal">Let Adam simplify the car sales process for you.</h4>
           <div className="about-cards">
             {simplifyCards.map((c) => (
               <div className="about-card reveal" key={c.n}>
@@ -163,30 +178,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values: heading left, white cards right */}
       <section className="section bg-cream">
         <div className="container container--wide about-values">
-          <div className="about-values__media reveal-left">
-            <img
-              src="/assets/images/Adam-Hall-Value-My-Car-2.jpg"
-              alt="Adam Hall with a customer and their car"
-              loading="lazy"
-              width={560}
-              height={520}
-            />
-          </div>
-          <div className="about-values__content reveal-right">
+          <div className="about-values__intro reveal-left">
             <h3>
               Some of the <span className="wavy">values</span> we hold deeply
             </h3>
-            <dl className="about-values__list">
-              {values.map((v) => (
-                <div key={v.title}>
-                  <dt>{v.title}</dt>
-                  <dd>{v.body}</dd>
-                </div>
-              ))}
-            </dl>
+          </div>
+          <div className="about-values__cards reveal-right">
+            {values.map((v) => (
+              <div className="about-value-card" key={v.title}>
+                <h4 className="about-value-card__title">
+                  <span className="wavy">{v.title}</span>
+                </h4>
+                <p>{v.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
