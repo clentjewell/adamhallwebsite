@@ -12,6 +12,9 @@ dist-ssr
 .idea
 .DS_Store
 
+# Local agent/session tooling state
+.claude/
+
 # Analysis / crawl workspace (not part of the app)
 _crawl/
 tsconfig.tsbuildinfo
