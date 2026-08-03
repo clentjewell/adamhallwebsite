@@ -13,6 +13,20 @@ export interface Episode {
 
 export const episodes: Episode[] = [
   {
+    "id": "c12b6c07-636c-4654-bf44-b496000b45d4",
+    "title": "What's Your Car Worth - July 28th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/c12b6c07-636c-4654-bf44-b496000b45d4/audio.mp3",
+    "cover": "/assets/covers/omny-c12b6c07-636c-4654-bf44-b496000b45d4.jpg"
+  },
+  {
+    "id": "a388ff0e-a0eb-4570-8311-b48e00726cd5",
+    "title": "What's Your Car Worth - July 21st",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/a388ff0e-a0eb-4570-8311-b48e00726cd5/audio.mp3",
+    "cover": "/assets/covers/omny-a388ff0e-a0eb-4570-8311-b48e00726cd5.jpg"
+  },
+  {
     "id": "d43fbba0-bbbf-4609-b6a1-b4870068d1e3",
     "title": "What's Your Car Worth - July 14th",
     "subtitle": "What's Your Car Worth",
