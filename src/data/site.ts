@@ -15,7 +15,22 @@ export const site = {
   copyright: `© ${new Date().getFullYear()} adamhallbuymycar.com.au. All Rights Reserved.`,
 };
 
+/*
+ * The buy side. Car Marketplace by Adam Hall lives on its own domain; this is
+ * the one place the parent site points buyers across to it. Every "Browse the
+ * cars" link on the /cars-for-sale page reads from here.
+ *
+ * SWAP AT LAUNCH: set this to https://carmarketplace.com.au once DNS is live.
+ * It currently points at the deployed preview so the page is clickable for
+ * review before the domain is switched on.
+ */
+export const marketplaceUrl =
+  'https://claude-carmarketplace-domain-split-vgokd1-adamhall-marketplace.clent.workers.dev';
+
 export const nav = [
+  // The crossing to the buy side, given first place so buyers find it. The
+  // reciprocal of the footer band on the marketplace that sends sellers here.
+  { label: 'Cars for Sale', to: '/cars-for-sale' },
   { label: 'How it Works', to: '/how-it-works' },
   { label: 'Buy My Car', to: '/buy-my-car' },
   { label: "Adam's Story", to: '/about-adam-hall' },
