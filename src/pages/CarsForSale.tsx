@@ -3,7 +3,7 @@ import { useReveal } from '../hooks/useReveal';
 import IconList from '../components/IconList';
 import Button from '../components/Button';
 import WaveDivider from '../components/WaveDivider';
-import { site, marketplaceUrl } from '../data/site';
+import { marketplaceUrl } from '../data/site';
 // Reuse the home page's hero and split-section layout so the crossing page
 // matches the rest of the site; CarsForSale.css only adds what is new here.
 import './Home.css';
@@ -208,8 +208,8 @@ export default function CarsForSale() {
             Browse the cars
           </Button>
           <p className="cfs-cta__aside">
-            Selling instead? Adam will come to you and value it.{' '}
-            <a href={site.phoneHref}>Call {site.phoneDisplay}</a>.
+            Car Marketplace is Adam&rsquo;s buy-side site, the same name behind Buy My
+            Car. Every car is PPSR checked and honestly described.
           </p>
         </div>
       </section>
