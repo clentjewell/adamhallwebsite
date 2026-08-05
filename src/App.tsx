@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 
 const Home = lazy(() => import('./pages/Home'));
+const CarsForSale = lazy(() => import('./pages/CarsForSale'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks'));
 const BuyMyCar = lazy(() => import('./pages/BuyMyCar'));
 const About = lazy(() => import('./pages/About'));
@@ -31,6 +32,7 @@ export default function App() {
           {/* All other pages share the standard header/footer layout */}
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/cars-for-sale" element={<CarsForSale />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/about-adam-hall" element={<About />} />
             <Route path="/listen-whats-your-car-worth" element={<Listen />} />
