@@ -28,14 +28,14 @@ export const marketplaceUrl =
   'https://claude-carmarketplace-domain-split-vgokd1-adamhall-marketplace.clent.workers.dev';
 
 export const nav = [
-  // The crossing to the buy side, given first place so buyers find it. The
-  // reciprocal of the footer band on the marketplace that sends sellers here.
-  { label: 'Cars for Sale', to: '/cars-for-sale' },
   { label: 'How it Works', to: '/how-it-works' },
   { label: 'Buy My Car', to: '/buy-my-car' },
   { label: "Adam's Story", to: '/about-adam-hall' },
   { label: 'Listen', to: '/listen-whats-your-car-worth' },
   { label: 'Contact', to: '/contact-us' },
+  // The crossing to the buy side, as the last item. The reciprocal of the
+  // footer band on the marketplace that sends sellers back here.
+  { label: 'Cars for Sale', to: '/cars-for-sale' },
 ];
 
 /* Five-item trust bar shown on green hero sections */

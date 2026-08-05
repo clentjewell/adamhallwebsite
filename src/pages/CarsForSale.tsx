@@ -161,9 +161,11 @@ export default function CarsForSale() {
 
       <WaveDivider color="green" flip />
 
-      {/* Backed by Adam: the endorsement, quoted as his credential. */}
+      {/* Backed by Adam: the endorsement, quoted as his credential. Uses the
+          media-left variant so the photo takes the left column and bleeds left,
+          rather than the default right bleed which would overrun the text. */}
       <section className="section bg-cream cfs-backed">
-        <div className="container container--wide home-split">
+        <div className="container container--wide home-split home-split--media-left">
           <div className="home-split__media reveal-left">
             <img
               src="/assets/images/Adam-Hall-4CRB-Gold-Coast.jpg"
