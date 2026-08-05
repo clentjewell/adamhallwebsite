@@ -138,8 +138,10 @@ export default function CarsForSale() {
 
       <WaveDivider color="green" />
 
-      {/* How buying works: the four-step process from the identity. */}
-      <section id="how-buying-works" className="section bg-cream cfs-steps-section">
+      {/* How buying works: the four-step process from the identity. Green so
+          the green wave dividers above and below read as its curved edges,
+          rather than floating bands between two cream sections. White cards. */}
+      <section id="how-buying-works" className="section bg-green cfs-steps-section">
         <div className="container container--wide">
           <div className="cfs-steps__head reveal">
             <span className="eyebrow">How buying works</span>
