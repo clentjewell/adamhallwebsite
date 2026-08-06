@@ -92,7 +92,7 @@ export default function CarsForSale() {
             We have already done the <span className="wavy">sorting</span>
           </h2>
           <p className="cfs-intro__text">
-            Around twenty-five cars pass through the books every month. The ones on the site are
+            The cars here move quickly, and the ones on the site are
             the ones that made the cut. No night on the classifieds, no Saturday spent driving to
             look at cars that were not as described.
           </p>
