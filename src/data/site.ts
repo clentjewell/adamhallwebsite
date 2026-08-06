@@ -29,7 +29,7 @@ export const marketplaceUrl =
 
 export const nav = [
   { label: 'How it Works', to: '/how-it-works' },
-  { label: 'Buy My Car', to: '/buy-my-car' },
+  { label: 'Sell Your Car', to: '/buy-my-car' },
   { label: "Adam's Story", to: '/about-adam-hall' },
   { label: 'Listen', to: '/listen-whats-your-car-worth' },
   { label: 'Contact', to: '/contact-us' },
