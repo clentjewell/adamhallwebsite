@@ -2,6 +2,7 @@ import { useSeo } from '../lib/seo';
 import { useReveal } from '../hooks/useReveal';
 import IconList from '../components/IconList';
 import Button from '../components/Button';
+import HeroFilm from '../components/HeroFilm';
 import WaveDivider from '../components/WaveDivider';
 import { marketplaceUrl } from '../data/site';
 // Reuse the home page's hero and split-section layout so the crossing page
@@ -54,22 +55,29 @@ export default function CarsForSale() {
 
   return (
     <>
-      {/* Hero: full-bleed photo, content right. Leads on the stock and the
-          promise, with Adam present as the endorsement rather than the subject. */}
-      <section className="hero bg-green">
-        <div className="hero__media">
-          <img
-            src="/assets/images/Adam-Hall-Car-Buying-Gold-Coast.jpg"
-            alt="A car handed over to its new owner on the Gold Coast"
-            fetchPriority="high"
+      {/* Hero: the film runs full width with the copy sitting over it.
+          This page departs from the site's photo-left/content-right hero on
+          purpose. The film is a side elevation, so it only reads whole in a
+          wide frame; dropped into the usual 39% photo column it crops to a
+          slab of door with no front or rear. The copy sits high and left
+          because the car occupies the lower half of every frame. */}
+      <section className="cfs-hero bg-green">
+        <div className="cfs-hero__media">
+          <HeroFilm
+            className="cfs-hero__film"
+            webm="/assets/video/Car-Marketplace-Blueprint-To-Road.webm"
+            mp4="/assets/video/Car-Marketplace-Blueprint-To-Road.mp4"
+            poster="/assets/images/Car-Marketplace-Blueprint-Poster.jpg"
+            still="/assets/images/Car-Marketplace-Blueprint-Still.jpg"
+            alt="A blueprint of a family wagon filling in to become a real car, which pulls forward and stops"
           />
         </div>
-        <div className="hero__content">
+        <div className="cfs-hero__content">
           <span className="eyebrow eyebrow--hero">Car Marketplace by Adam Hall</span>
-          <h1 className="hero__title">
+          <h1 className="cfs-hero__title">
             Cars worth putting <span className="wavy">our name</span> on
           </h1>
-          <p className="hero__subtitle">
+          <p className="cfs-hero__subtitle">
             A short range of used cars, every one hand-picked, PPSR checked and honestly
             described. If there is a mark on it, we say so.
           </p>
