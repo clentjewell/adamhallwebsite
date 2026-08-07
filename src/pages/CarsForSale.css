@@ -1,5 +1,137 @@
 /* Cars for Sale — the buy-side crossing page. Only page-specific pieces live
-   here; the hero and split sections are reused from Home.css. */
+   here; the split sections are reused from Home.css. */
+
+/* --- Hero: the blueprint film ---------------------------------------------
+   This page does not use the site's photo-left/content-right hero. The film is
+   a side elevation of a car, so it only reads whole in a wide frame; in the
+   usual 39% photo column object-fit crops it to a slab of door with neither
+   front nor rear. So the film runs full width instead.
+
+   Below 1025px the copy sits above the film on solid green rather than over it.
+   That keeps the transparent header on the same green backdrop it gets on every
+   other page, and lets the film stay a full-width 16:9 band instead of being
+   cropped to a phone's portrait viewport. */
+.cfs-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cfs-hero__content {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  /* top padding clears the absolutely-positioned header */
+  padding: calc(var(--header-h-mobile) + 1.5rem) clamp(1.25rem, 5vw, 4rem)
+    clamp(2.5rem, 5vw, 3.5rem);
+}
+/* A squarer box than the film, anchored right. The film reserves its left third
+   for the desktop copy, and with nothing sitting in it here that space just
+   reads as the car being shunted to one edge; cropping it away recentres the
+   car for the stacked layout. */
+.cfs-hero__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+.cfs-hero__film {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Hard right: the car's tail sits within a percent of the film's right edge,
+     so anything less than this crops the back off it. */
+  object-position: 100% center;
+  /* The film's own ground colour, so the box does not flash pale before the
+     first frame paints. */
+  background: #021e24;
+}
+.cfs-hero__title {
+  font-size: var(--fs-hero);
+  color: var(--c-white);
+  line-height: 1.12;
+  margin: 0.4rem 0 0.9rem;
+}
+.cfs-hero__subtitle {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.3;
+  color: var(--c-white);
+  margin: 0 0 1.6rem;
+  max-width: 42rem;
+}
+
+@media (min-width: 1025px) {
+  /* Stepped down from --fs-hero: the copy column is a third of the width here,
+     not the usual half, and the full hero size wraps the headline to four
+     lines in it. */
+  .cfs-hero__title {
+    font-size: clamp(2.1rem, 3.1vw, 2.85rem);
+  }
+  .cfs-hero__subtitle {
+    font-size: clamp(1.1rem, 1.35vw, 1.3rem);
+    line-height: 1.45;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* 16/9 tracks the film's own 1.75 aspect, so cover only ever trims the sky
+     and the road, never the nose or the tail. min-height wins on short windows
+     and costs a few percent off the sides at worst. */
+  .cfs-hero {
+    display: block;
+    aspect-ratio: 16 / 9;
+    min-height: 620px;
+    max-height: 88vh;
+  }
+  .cfs-hero__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+  /* Full frame again here: the left third is the copy's home on desktop. */
+  .cfs-hero__film {
+    object-position: center;
+  }
+  /* Scrim. The film is composed with its left third deliberately empty, so this
+     only has to deepen ground the car never occupies.
+
+     It is the film's own ground colour rather than brand green on purpose: over
+     the opening drawing, whose background is exactly this value, the scrim is
+     invisible instead of laying a lighter green band down the left. Brand green
+     also went muddy where it crossed the closing frame's warm sky. */
+  .cfs-hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 30, 36, 0.92) 0%,
+        rgba(2, 30, 36, 0.84) 30%,
+        rgba(2, 30, 36, 0.2) 40%,
+        rgba(2, 30, 36, 0) 47%
+      ),
+      linear-gradient(180deg, rgba(2, 30, 36, 0.4) 0%, rgba(2, 30, 36, 0) 34%);
+  }
+  /* Sits in the film's empty left third, vertically centred. The car's nose
+     reaches 38% of the frame, so the column is held to roughly 30% and the
+     scrim has fallen away before it gets near the bodywork. */
+  .cfs-hero__content {
+    position: relative;
+    z-index: 1;
+    order: 0;
+    height: 100%;
+    justify-content: center;
+    width: 38%;
+    max-width: 26rem;
+    padding: calc(var(--header-h) + 1rem) 1.5rem 2rem clamp(1.25rem, 4vw, 3.5rem);
+  }
+  /* The film's closing frames are bright, so the type carries a little shadow
+     of its own rather than leaning on the scrim alone. */
+  .cfs-hero__title,
+  .cfs-hero__subtitle {
+    text-shadow: 0 1px 12px rgba(0, 30, 24, 0.45);
+  }
+}
 
 /* Secondary hero link, sitting beside the primary tan button. */
 .cfs-hero__link {
