@@ -16,13 +16,15 @@ export const site = {
 };
 
 /*
- * The buy side. Car Marketplace by Adam Hall lives on its own domain; this is
- * the one place the parent site points buyers across to it. Every "Browse the
- * cars" link on the /cars-for-sale page reads from here.
+ * The buy side. Car Marketplace by Adam Hall lives on its own domain.
+ *
+ * Currently unreferenced: the /cars-for-sale page that used to carry the
+ * crossing to the buy side has been removed, so nothing on this site links
+ * across right now. Kept here so the link can be restored without digging
+ * the URL back out.
  *
  * SWAP AT LAUNCH: set this to https://carmarketplace.com.au once DNS is live.
- * It currently points at the deployed preview so the page is clickable for
- * review before the domain is switched on.
+ * It currently points at the deployed preview.
  */
 export const marketplaceUrl =
   'https://claude-carmarketplace-domain-split-vgokd1-adamhall-marketplace.clent.workers.dev';
@@ -33,9 +35,6 @@ export const nav = [
   { label: "Adam's Story", to: '/about-adam-hall' },
   { label: 'Listen', to: '/listen-whats-your-car-worth' },
   { label: 'Contact', to: '/contact-us' },
-  // The crossing to the buy side, as the last item. The reciprocal of the
-  // footer band on the marketplace that sends sellers back here.
-  { label: 'Cars for Sale', to: '/cars-for-sale' },
 ];
 
 /* Five-item trust bar shown on green hero sections */
