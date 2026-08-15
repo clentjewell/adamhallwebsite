@@ -13,6 +13,13 @@ export interface Episode {
 
 export const episodes: Episode[] = [
   {
+    "id": "930be752-ac74-414e-8730-b4a50009d8d9",
+    "title": "What's Your Car Worth - August 11th",
+    "subtitle": "What's Your Car Worth",
+    "audio": "https://traffic.omny.fm/d/clips/f29927f7-c62b-47a4-8d33-b06e00c903fe/1072c1b1-461e-4031-aa82-b111003c2946/930be752-ac74-414e-8730-b4a50009d8d9/audio.mp3",
+    "cover": "/assets/covers/omny-930be752-ac74-414e-8730-b4a50009d8d9.jpg"
+  },
+  {
     "id": "c12b6c07-636c-4654-bf44-b496000b45d4",
     "title": "What's Your Car Worth - July 28th",
     "subtitle": "What's Your Car Worth",
