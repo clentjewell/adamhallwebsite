@@ -16,24 +16,12 @@ export const site = {
 };
 
 /*
- * The buy side. Car Marketplace by Adam Hall lives on its own domain; this is
- * the one place the parent site points buyers across to it. The "Cars for Sale"
- * nav item below reads from here and sends buyers straight over. There used to
- * be a /cars-for-sale landing page in between; it was removed, so the crossing
- * is now a single hop.
- *
- * SWAP AT LAUNCH: set this to https://carmarketplace.com.au once DNS is live.
- * It currently points at the deployed preview so the link is clickable for
- * review before the domain is switched on.
+ * This site is the sell side only. Car Marketplace by Adam Hall lives on its
+ * own domain and is not linked from here: the /cars-for-sale landing page was
+ * removed, and the "Cars for Sale" nav item with it. Nothing in the header or
+ * footer crosses to the buy side.
  */
-export const marketplaceUrl =
-  'https://claude-carmarketplace-domain-split-vgokd1-adamhall-marketplace.clent.workers.dev';
-
-/*
- * `to` is a router path unless the item is marked external, in which case it is
- * an absolute URL and Header/Footer render a plain <a> rather than a NavLink.
- */
-export type NavItem = { label: string; to: string; external?: boolean };
+export type NavItem = { label: string; to: string };
 
 export const nav: NavItem[] = [
   { label: 'How it Works', to: '/how-it-works' },
@@ -41,10 +29,6 @@ export const nav: NavItem[] = [
   { label: "Adam's Story", to: '/about-adam-hall' },
   { label: 'Listen', to: '/listen-whats-your-car-worth' },
   { label: 'Contact', to: '/contact-us' },
-  // The crossing to the buy side, as the last item. The reciprocal of the
-  // footer band on the marketplace that sends sellers back here. It goes
-  // straight to the other domain now that the /cars-for-sale page is gone.
-  { label: 'Cars for Sale', to: marketplaceUrl, external: true },
 ];
 
 /* Five-item trust bar shown on green hero sections */

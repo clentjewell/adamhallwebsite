@@ -26,24 +26,16 @@ export default function Header() {
         <div className="site-header__right">
           <nav className="site-header__nav" aria-label="Primary">
             <ul>
-              {nav.map((item) =>
-                // "Cars for Sale" points at the other domain, so it is a plain
-                // anchor: NavLink would hand an absolute URL to the router.
-                item.external ? (
-                  <li key={item.to}>
-                    <a href={item.to}>{item.label}</a>
-                  </li>
-                ) : (
-                  <li key={item.to}>
-                    <NavLink
-                      to={item.to}
-                      className={({ isActive }) => (isActive ? 'is-active' : undefined)}
-                    >
-                      {item.label}
-                    </NavLink>
-                  </li>
-                ),
-              )}
+              {nav.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
           <Button href={site.phoneHref} variant="purple" className="btn--bubble site-header__phone">
@@ -67,21 +59,13 @@ export default function Header() {
       <div className={`mobile-menu ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <nav aria-label="Mobile">
           <ul>
-            {nav.map((item) =>
-              item.external ? (
-                <li key={item.to}>
-                  <a href={item.to} onClick={() => setOpen(false)}>
-                    {item.label}
-                  </a>
-                </li>
-              ) : (
-                <li key={item.to}>
-                  <NavLink to={item.to} onClick={() => setOpen(false)}>
-                    {item.label}
-                  </NavLink>
-                </li>
-              ),
-            )}
+            {nav.map((item) => (
+              <li key={item.to}>
+                <NavLink to={item.to} onClick={() => setOpen(false)}>
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
         <Button href={site.phoneHref} variant="purple" className="mobile-menu__call">

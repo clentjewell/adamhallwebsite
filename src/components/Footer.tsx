@@ -41,19 +41,11 @@ export default function Footer() {
           <div className="site-footer__col">
             <h6>Links</h6>
             <ul>
-              {nav.map((item) =>
-                // "Cars for Sale" crosses to the marketplace domain, so it is a
-                // plain anchor rather than a router Link.
-                item.external ? (
-                  <li key={item.to}>
-                    <a href={item.to}>{item.label}</a>
-                  </li>
-                ) : (
-                  <li key={item.to}>
-                    <Link to={item.to}>{item.label}</Link>
-                  </li>
-                ),
-              )}
+              {nav.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to}>{item.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
