@@ -12,8 +12,9 @@ dist-ssr
 .idea
 .DS_Store
 
-# Local agent/session tooling state
-.claude/
+# Local agent/session tooling state (shared project settings are tracked)
+.claude/*
+!.claude/settings.json
 
 # Analysis / crawl workspace (not part of the app)
 _crawl/
